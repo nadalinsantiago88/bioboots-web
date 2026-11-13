@@ -1,0 +1,1309 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Botines de fútbol · Catálogo</title>
+<meta name="description" content="Botines de alto rendimiento para cada superficie. Elegí tu modelo y tu talle, y escribinos por WhatsApp.">
+<meta property="og:title" content="Botines de alto rendimiento">
+<meta property="og:description" content="Elegí tu modelo y tu talle. Envíos a todo el país.">
+<meta property="og:image" content="img/productos/mercurial-vapor-16-elite-rosa/1.webp">
+<link rel="icon" href="img/logo-mask.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Saira:wdth,wght@75..125,100..800&amp;family=Anybody:wdth,wght@50..150,100..900&amp;family=Unbounded:wght@400..900&amp;family=Martian+Mono:wdth,wght@75..112.5,300..600&amp;display=swap" rel="stylesheet">
+<style>
+:root{--bg:#E2E2E2;--bg-alt:#E2E2E2;--surface:#F7F7F7;--ink:#111111;--ink-soft:#5C5C5C;--line:#D0D0D0;--accent:#FF3D8B;--accent-soft:#FF6FA8;--white:#FFFFFF;--shadow:0 1px 2px rgba(0,0,0,.06),0 12px 32px rgba(0,0,0,.08);--shadow-hi:0 20px 48px rgba(0,0,0,.14);--ease:cubic-bezier(.2,.7,.2,1)}
+html{scroll-behavior:auto}
+body{margin:0;background:#E2E2E2;-webkit-font-smoothing:antialiased}
+*{box-sizing:border-box}
+button,input{font-family:inherit}
+a{color:#111;text-decoration:none}
+a:hover{color:#5C5C5C}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+::selection{background:#FF3D8B;color:#111}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes marquee{to{transform:translateX(-50%)}}
+@keyframes pulse{0%,100%{opacity:.55}50%{opacity:1}}
+@media (prefers-reduced-motion: reduce){*,*::before,*::after{transition:none!important;animation:none!important}}
+</style>
+</helmet>
+<div ref="{{ rootRef }}" style="background:var(--bg);color:var(--ink);font-family:'Unbounded',system-ui,sans-serif;font-weight:300;font-size:15px;line-height:1.6;min-height:100vh;overflow-x:clip;">
+
+<header style="position:fixed;top:12px;left:clamp(10px,2vw,24px);right:clamp(10px,2vw,24px);z-index:50;font-family:'Unbounded',sans-serif;">
+  <div style="position:relative;max-width:1600px;margin:0 auto;height:60px;padding:0 8px 0 clamp(14px,2vw,22px);display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:16px;background:linear-gradient(180deg,rgba(255,255,255,.12),rgba(255,255,255,.04)),rgba(18,18,20,.42);backdrop-filter:blur(22px) saturate(1.7);-webkit-backdrop-filter:blur(22px) saturate(1.7);border:1px solid rgba(255,255,255,.16);border-radius:999px;box-shadow:inset 0 1px 0 rgba(255,255,255,.22),inset 0 -1px 0 rgba(255,255,255,.05),0 12px 36px rgba(0,0,0,.28);color:#F2F2F2;overflow:hidden;">
+    <div aria-hidden="true" style="position:absolute;left:0;bottom:0;height:2px;width:100%;background:var(--accent);transform-origin:left;transform:scaleX(0);" ref="{{ progRef }}"></div>
+    <button onClick="{{ go.inicio }}" aria-label="Ir al inicio" style="justify-self:start;display:flex;align-items:center;gap:10px;background:none;border:0;padding:0;color:#F2F2F2;cursor:pointer;min-height:44px;font-family:inherit;">
+      <span data-navlogo="" aria-hidden="true" style="display:block;width:26px;height:26px;background-color:currentColor;-webkit-mask-image:url(img/logo-mask.png);mask-image:url(img/logo-mask.png);-webkit-mask-size:contain;mask-size:contain;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;-webkit-mask-position:center;mask-position:center;"></span>
+      <span style="font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;">{{ brand }}</span>
+    </button>
+    <sc-if value="{{ isDesk }}" hint-placeholder-val="{{ true }}">
+      <nav aria-label="Principal" style="display:flex;gap:2px;padding:4px;border-radius:999px;background:rgba(255,255,255,.05);box-shadow:inset 0 0 0 1px rgba(255,255,255,.08);">
+        <sc-for list="{{ navLinks }}" as="l" hint-placeholder-count="3">
+          <button onClick="{{ l.go }}" aria-current="{{ l.current }}" style="display:flex;align-items:center;min-height:40px;background:{{ l.bg }};border:0;border-radius:999px;padding:0 18px;cursor:pointer;color:{{ l.color }};font-family:inherit;font-size:12px;font-weight:{{ l.fw }};letter-spacing:.02em;box-shadow:{{ l.sh }};transition:background-color .35s cubic-bezier(.2,.7,.2,1),color .35s,box-shadow .35s;" style-hover="color:{{ l.hov }};">{{ l.label }}</button>
+        </sc-for>
+      </nav>
+    </sc-if>
+    <sc-if value="{{ isTab }}" hint-placeholder-val="{{ false }}"><span></span></sc-if>
+    <div style="justify-self:end;display:flex;align-items:center;gap:4px;">
+      <button onClick="{{ openCart }}" aria-label="Abrir mi carrito" style="display:flex;align-items:center;gap:10px;background:none;border:0;padding:0 8px;min-height:44px;min-width:44px;cursor:pointer;color:#F2F2F2;font-family:inherit;font-size:11.5px;font-weight:400;letter-spacing:.1em;text-transform:uppercase;">
+        <span style="position:relative;display:flex;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M5 8h14l-1.2 12H6.2L5 8z"></path><path d="M9 8V6a3 3 0 0 1 6 0v2"></path></svg>
+          <sc-if value="{{ hasCart }}" hint-placeholder-val="{{ false }}">
+            <span style="position:absolute;top:-6px;right:-9px;min-width:18px;height:18px;padding:0 5px;border-radius:9px;background:var(--accent);color:var(--ink);font-size:10px;font-weight:600;line-height:18px;text-align:center;letter-spacing:0;font-variant-numeric:tabular-nums;">{{ cartCount }}</span>
+          </sc-if>
+        </span>
+        <sc-if value="{{ isDesk }}" hint-placeholder-val="{{ true }}"><span>Mi carrito</span></sc-if>
+      </button>
+      <sc-if value="{{ isTab }}" hint-placeholder-val="{{ false }}">
+        <button onClick="{{ openMenu }}" aria-label="Abrir menú" style="display:flex;align-items:center;justify-content:center;width:44px;height:44px;background:none;border:0;cursor:pointer;color:#F2F2F2;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M4 8h16M4 16h16"></path></svg>
+        </button>
+      </sc-if>
+    </div>
+  </div>
+</header>
+
+<sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+  <div data-menu="" data-trap="on" role="dialog" aria-modal="true" aria-label="Menú" style="position:fixed;inset:0;z-index:70;background:var(--bg);display:flex;flex-direction:column;padding:16px clamp(16px,4vw,56px) 40px;">
+    <div style="display:flex;justify-content:flex-end;height:56px;align-items:center;">
+      <button data-autofocus="" onClick="{{ closeMenu }}" aria-label="Cerrar menú" style="width:44px;height:44px;background:none;border:0;cursor:pointer;color:var(--ink);display:flex;align-items:center;justify-content:center;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M6 6l12 12M18 6L6 18"></path></svg></button>
+    </div>
+    <nav style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:8px;">
+      <sc-for list="{{ navLinks }}" as="l" hint-placeholder-count="3">
+        <button data-menulink="" onClick="{{ l.go }}" style="text-align:left;background:none;border:0;border-bottom:1px solid var(--line);padding:20px 0;cursor:pointer;color:var(--ink);font-size:clamp(2rem,9vw,3rem);font-weight:300;letter-spacing:.06em;text-transform:uppercase;">{{ l.label }}</button>
+      </sc-for>
+    </nav>
+    <button onClick="{{ contact }}" style="min-height:52px;background:var(--ink);color:#fff;border:0;border-radius:2px;font-size:14px;font-weight:400;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;">Escribinos por WhatsApp</button>
+  </div>
+</sc-if>
+
+<main>
+<!-- HERO -->
+<section id="inicio" data-screen-label="Hero" style="position:relative;min-height:max(100svh,640px);background:#050506;color:#FBF8F1;overflow:hidden;isolation:isolate;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:clamp(28px,5vh,56px);padding:110px clamp(16px,4vw,56px) 56px;">
+  <img src="img/hero/fondo-hero.webp" alt="" aria-hidden="true" width="2339" height="1081" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;">
+  <div aria-hidden="true" style="position:absolute;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(ellipse 75% 65% at 50% 45%,rgba(5,5,6,.1) 0%,rgba(5,5,6,.55) 65%,rgba(5,5,6,.92) 100%),linear-gradient(180deg,rgba(5,5,6,.55) 0%,rgba(5,5,6,0) 22%,rgba(5,5,6,0) 70%,#050506 100%);"></div>
+  <div style="text-align:center;max-width:100%;">
+    <h1 data-hname="" aria-label="{{ brand }}" style="margin:0;display:flex;justify-content:center;font-family:'Unbounded',sans-serif;font-size:clamp(2.4rem,9.6vw,8.6rem);line-height:.95;letter-spacing:.01em;text-transform:uppercase;color:#EFE6D3;white-space:nowrap;">
+      <sc-for list="{{ brandLetters }}" as="l" hint-placeholder-count="9"><span data-ch="" aria-hidden="true" style="display:inline-block;font-variation-settings:'wght' 600,'wdth' 100;">{{ l.ch }}</span></sc-for>
+    </h1>
+    <p style="margin:18px 0 0;font-size:clamp(11px,1.2vw,14px);font-weight:400;letter-spacing:.34em;text-transform:uppercase;color:rgba(251,248,241,.75);">Tu rendimiento, nuestra responsabilidad</p>
+  </div>
+  <nav aria-label="Marcas" style="width:100%;max-width:1180px;display:grid;grid-template-columns:{{ L.heroBrands }};gap:clamp(12px,2.4vw,40px);">
+    <sc-for list="{{ heroBrands }}" as="b" hint-placeholder-count="4">
+      <a href="{{ b.href }}" onClick="{{ b.go }}" onMouseEnter="{{ b.enter }}" onMouseLeave="{{ b.leave }}" onFocus="{{ b.enter }}" onBlur="{{ b.leave }}" aria-label="Ver botines {{ b.nombre }}" style="display:flex;flex-direction:column;align-items:center;gap:14px;padding:8px 4px;color:#FBF8F1;text-decoration:none;opacity:{{ b.op }};transition:opacity .4s cubic-bezier(.2,.7,.2,1);outline-offset:6px;border-radius:12px;">
+        <span style="position:relative;width:100%;aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;">
+          <span aria-hidden="true" style="position:absolute;left:50%;top:48%;width:95%;aspect-ratio:1.7;border-radius:50%;background:radial-gradient(closest-side,rgba(255,217,168,.38),rgba(255,217,168,0));filter:blur(14px);opacity:{{ b.glowOp }};transform:translate(-50%,-50%);transition:opacity .45s cubic-bezier(.2,.7,.2,1);"></span>
+          <span aria-hidden="true" style="position:absolute;left:50%;bottom:9%;width:{{ b.shW }};height:16px;border-radius:50%;background:radial-gradient(closest-side,rgba(0,0,0,.85),rgba(0,0,0,0));filter:blur({{ b.shB }});transform:translateX(-50%);transition:width .45s cubic-bezier(.2,.7,.2,1),filter .45s cubic-bezier(.2,.7,.2,1);"></span>
+          <span aria-hidden="true" style="position:absolute;left:18%;right:18%;bottom:8%;height:1px;background:linear-gradient(90deg,rgba(255,217,168,0),rgba(255,217,168,.6),rgba(255,217,168,0));"></span>
+          <img src="{{ b.img }}" alt="" width="1024" height="450" style="position:relative;width:94%;height:auto;margin-bottom:6%;transform:{{ b.tf }};transition:transform .42s cubic-bezier(.2,.7,.2,1),filter .42s;filter:{{ b.filt }};">
+        </span>
+        <span style="display:flex;flex-direction:column;align-items:center;gap:6px;">
+          <span style="font-size:12px;font-weight:400;letter-spacing:.24em;text-transform:uppercase;text-align:center;">{{ b.label }}</span>
+          <sc-if value="{{ b.sub }}" hint-placeholder-val="{{ false }}"><span style="font-size:10px;font-weight:400;letter-spacing:.14em;text-transform:uppercase;text-align:center;color:#FFD9A8;">Ver botines →</span></sc-if>
+          <span aria-hidden="true" style="display:block;width:64px;height:1px;background:#FFD9A8;transform:scaleX({{ b.ul }});transition:transform .4s cubic-bezier(.2,.7,.2,1);"></span>
+        </span>
+      </a>
+    </sc-for>
+  </nav>
+  <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;">
+    <button onClick="{{ go.catalogo }}" style="min-height:52px;padding:0 34px;background:#EFE6D3;color:#050506;border:0;border-radius:999px;font-size:13px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;cursor:pointer;transition:background-color .3s,transform .3s cubic-bezier(.2,.7,.2,1);" style-hover="background-color:#FFD9A8;transform:translateY(-2px);">Ver catálogo</button>
+    <button onClick="{{ contact }}" style="min-height:52px;padding:0 34px;background:transparent;color:#FBF8F1;border:1px solid rgba(251,248,241,.45);border-radius:999px;font-size:13px;font-weight:400;letter-spacing:.16em;text-transform:uppercase;cursor:pointer;transition:border-color .3s,transform .3s cubic-bezier(.2,.7,.2,1);" style-hover="border-color:#FFD9A8;transform:translateY(-2px);">Contactanos</button>
+  </div>
+</section>
+
+<div aria-hidden="true" style="background:#111;color:#fff;overflow:hidden;border-top:1px solid #111;">{{ marquee }}</div>
+<!-- DESTACADOS -->
+<section id="destacados" data-screen-label="Los más elegidos" style="--ink:#FBF8F1;--ink-soft:#A9A49A;position:relative;background:#050506;color:#FBF8F1;padding-top:clamp(80px,10vw,150px);overflow:hidden;isolation:isolate;">
+  <img data-dtex="" src="img/ilustraciones/ilus-02-lineas-blancas-fondo-negro.webp" alt="" aria-hidden="true" loading="lazy" style="position:absolute;inset:-20px;width:calc(100% + 40px);height:calc(100% + 40px);object-fit:cover;opacity:.08;z-index:-1;pointer-events:none;">
+  <div data-reveal="" style="max-width:1440px;margin:0 auto;padding:0 clamp(16px,4vw,56px);display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-bottom:clamp(40px,5vw,72px);">
+    <div>
+      <span aria-hidden="true" style="display:block;width:32px;height:2px;background:var(--accent);margin-bottom:20px;"></span>
+      <h2 style="margin:0;font-weight:300;font-size:clamp(1.75rem,3.5vw,3rem);line-height:1;letter-spacing:.06em;text-transform:uppercase;">Los más elegidos</h2>
+    </div>
+    <p style="margin:0;max-width:360px;color:var(--ink-soft);font-size:15px;">Tres modelos que definen la temporada. Elegí el tuyo y lo dejamos listo.</p>
+  </div>
+  <div aria-hidden="true" style="position:relative;height:3px;z-index:3;">
+    <span data-edgebase="" style="position:absolute;inset:0;background-image:linear-gradient(90deg,rgba(255,217,168,.08) 0%,rgba(255,190,110,.75) 25%,rgba(255,217,168,.08) 50%,rgba(255,190,110,.75) 75%,rgba(255,217,168,.08) 100%);background-size:50% 100%;box-shadow:0 0 14px rgba(255,180,90,.35);"></span>
+    <span style="position:absolute;inset:0;overflow:hidden;">
+      <span data-glint="" style="position:absolute;top:0;bottom:0;left:0;width:18%;background:linear-gradient(90deg,rgba(255,240,215,0),#FFF4DE 50%,rgba(255,240,215,0));transform:translateX(-100%);"></span>
+      <span data-glint="" style="position:absolute;top:0;bottom:0;left:0;width:10%;background:linear-gradient(90deg,rgba(255,200,130,0),#FFC27A 50%,rgba(255,200,130,0));transform:translateX(-100%);"></span>
+    </span>
+    <span data-glow="" style="position:absolute;left:0;top:-14px;width:24%;height:30px;border-radius:50%;background:radial-gradient(closest-side,rgba(255,200,130,.75),rgba(255,180,90,0));filter:blur(6px);transform:translateX(-100%);pointer-events:none;"></span>
+  </div>
+  <div data-featstrip="" style="display:flex;height:{{ L.featH }};overflow-x:{{ L.featOv }};scroll-snap-type:x mandatory;scrollbar-width:none;background:{{ L.featBg }};gap:{{ L.featGap }};padding:{{ L.featPad }};">
+    <sc-for list="{{ feat3 }}" as="p" hint-placeholder-count="3">
+      <article data-feat="" style="border-top:0;flex:{{ L.featFlex }};min-width:0;scroll-snap-align:center;position:relative;overflow:hidden;border-radius:{{ L.featRad }};transition:transform .6s cubic-bezier(.2,.7,.2,1),opacity .6s;isolation:isolate;display:flex;flex-direction:column;gap:clamp(10px,1.4vh,18px);padding:clamp(18px,2.6vh,32px) clamp(18px,2.2vw,36px);text-align:left;transition:flex-grow .8s cubic-bezier(.2,.7,.2,1);background:#D9D9D9;" style-hover="flex-grow:1.5;">
+        <img data-fbg="" src="{{ p.bg }}" alt="" aria-hidden="true" width="1125" height="2000" loading="lazy" style="position:absolute;inset:-4%;width:108%;height:108%;object-fit:cover;z-index:-3;pointer-events:none;transition:transform 1.4s cubic-bezier(.2,.7,.2,1);">
+        <div aria-hidden="true" style="position:absolute;inset:0;z-index:-2;pointer-events:none;background:radial-gradient(ellipse 70% 42% at 50% 0%,rgba(255,255,255,.55),rgba(255,255,255,0) 70%),linear-gradient(180deg,rgba(255,255,255,.12),rgba(255,255,255,0) 40%);"></div>
+        <span aria-hidden="true" style="position:absolute;left:0;top:0;bottom:0;width:1px;background:rgba(17,17,17,.28);overflow:hidden;opacity:{{ p.divOp }};z-index:2;pointer-events:none;"><span data-vglint="" style="position:absolute;left:0;right:0;top:0;height:18%;background:linear-gradient(180deg,rgba(255,217,168,0),#FFD9A8 50%,rgba(255,217,168,0));transform:translateY(-100%);"></span></span>
+        <h3 style="margin:0;color:{{ p.inkTitle }};font-weight:400;font-size:clamp(1rem,1.4vw,1.35rem);letter-spacing:.04em;text-transform:uppercase;line-height:1.15;max-width:18ch;">{{ p.nombre }}</h3>
+        <button data-boot="" onClick="{{ p.open }}" aria-label="Ver ficha de {{ p.nombre }}" style="position:relative;flex:1;min-height:0;display:flex;align-items:center;justify-content:center;padding:0;border:0;background:none;cursor:pointer;isolation:isolate;transition:transform .8s cubic-bezier(.2,.7,.2,1);">
+          <span aria-hidden="true" style="position:absolute;left:50%;top:50%;width:min(96%,600px);aspect-ratio:1;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(closest-side,rgba(255,255,255,.7),rgba(255,255,255,0));filter:blur(18px);z-index:-1;"></span>
+          <span style="position:relative;display:block;width:{{ L.featImgW }};height:{{ L.featImgH }};max-width:100%;max-height:100%;aspect-ratio:1;border-radius:32px;overflow:hidden;background:#fff;box-shadow:0 30px 60px -20px rgba(0,0,0,.28),inset 0 0 0 1px rgba(255,255,255,.6);-webkit-mask-image:radial-gradient(ellipse 72% 72% at 50% 50%,#000 64%,rgba(0,0,0,.85) 78%,rgba(0,0,0,0) 100%);mask-image:radial-gradient(ellipse 72% 72% at 50% 50%,#000 64%,rgba(0,0,0,.85) 78%,rgba(0,0,0,0) 100%);">
+            <img src="{{ p.principal }}" alt="{{ p.alt1 }}" width="1024" height="1024" loading="lazy" style="width:100%;height:100%;object-fit:contain;display:block;transform:scale(1);transition:transform .7s cubic-bezier(.2,.7,.2,1);" style-hover="transform:scale(1.08);">
+          </span>
+        </button>
+        <dl data-panel="" style="margin:0;display:flex;flex-direction:column;font-size:12.5px;line-height:1.4;">
+          <div data-row="" style="position:relative;display:grid;grid-template-columns:96px minmax(0,1fr);gap:10px;padding:6px 0;color:{{ p.ink }};"><span data-line="" aria-hidden="true" style="position:absolute;left:0;right:0;bottom:0;height:1px;background:{{ p.line }};transform-origin:left;"></span><dt data-lab="" style="font-size:10px;font-weight:400;letter-spacing:.14em;text-transform:uppercase;padding-top:2px;">Gama</dt><dd data-val="" style="margin:0;text-align:left;">{{ p.gama }}</dd></div>
+          
+          
+          <div data-row="" style="position:relative;display:grid;grid-template-columns:96px minmax(0,1fr);gap:10px;padding:6px 0;color:{{ p.ink }};"><span data-line="" aria-hidden="true" style="position:absolute;left:0;right:0;bottom:0;height:1px;background:{{ p.line }};transform-origin:left;"></span><dt data-lab="" style="font-size:10px;font-weight:400;letter-spacing:.14em;text-transform:uppercase;padding-top:2px;">Suela</dt><dd data-val="" style="margin:0;text-align:left;">{{ p.suelaTxt }}</dd></div>
+          <div data-row="" style="position:relative;display:grid;grid-template-columns:96px minmax(0,1fr);gap:10px;padding:6px 0;color:{{ p.ink }};"><span data-line="" aria-hidden="true" style="position:absolute;left:0;right:0;bottom:0;height:1px;background:{{ p.line }};transform-origin:left;"></span><dt data-lab="" style="font-size:10px;font-weight:400;letter-spacing:.14em;text-transform:uppercase;padding-top:2px;">Talles</dt><dd data-val="" style="margin:0;text-align:left;font-variant-numeric:tabular-nums;">{{ p.tallesTxt }}</dd></div>
+          <div data-row="" style="position:relative;display:grid;grid-template-columns:96px minmax(0,1fr);gap:10px;align-items:baseline;padding:8px 0 0;color:{{ p.ink }};"><dt data-lab="" style="font-size:11px;font-weight:400;letter-spacing:.18em;text-transform:uppercase;">Precio</dt><dd data-val="" style="margin:0;text-align:left;font-weight:500;font-size:19px;letter-spacing:.01em;font-variant-numeric:tabular-nums;">{{ p.precioFmt }}</dd></div>
+        </dl>
+        <button onClick="{{ p.add }}" style="width:100%;min-height:46px;flex:0 0 auto;background-color:#111;color:#fff;border:0;border-radius:2px;font-size:12px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;box-shadow:0 12px 30px rgba(0,0,0,.2);background-image:linear-gradient(var(--accent),var(--accent));background-repeat:no-repeat;background-position:left bottom;background-size:0% 3px;transition:background-size .45s var(--ease);" style-hover="background-size:100% 3px;">Agregar al carrito</button>
+      </article>
+    </sc-for>
+  </div>
+</section>
+
+<!-- CATÁLOGO -->
+<section id="catalogo" data-screen-label="Catálogo" style="--ink:#F2F2F2;--ink-soft:#A6A6AA;--line:#46464B;--surface:#36363A;--bg:#2B2B2E;color:#F2F2F2;position:relative;overflow:hidden;isolation:isolate;background:#2B2B2E;padding:clamp(80px,10vw,150px) clamp(16px,4vw,56px);">
+  <img src="img/ilustraciones/ilus-07-remolino-negro-h.webp" alt="" aria-hidden="true" width="1308" height="736" loading="lazy" style="position:absolute;top:-6%;right:-14%;width:min(92%,1500px);height:auto;opacity:.16;mix-blend-mode:screen;z-index:-1;pointer-events:none;-webkit-mask-image:radial-gradient(ellipse 60% 60% at 60% 40%,#000 40%,transparent 100%);mask-image:radial-gradient(ellipse 60% 60% at 60% 40%,#000 40%,transparent 100%);">
+  <img src="img/ilustraciones/ilus-07-remolino-negro.webp" alt="" aria-hidden="true" width="736" height="1308" loading="lazy" style="position:absolute;bottom:-18%;left:-16%;width:min(46%,640px);height:auto;transform:scaleX(-1);opacity:.12;mix-blend-mode:screen;z-index:-1;pointer-events:none;-webkit-mask-image:radial-gradient(ellipse 55% 55% at 50% 50%,#000 30%,transparent 100%);mask-image:radial-gradient(ellipse 55% 55% at 50% 50%,#000 30%,transparent 100%);">
+  <div style="max-width:1440px;margin:0 auto;">
+    <div data-reveal="" style="margin-bottom:clamp(32px,4vw,56px);">
+      <span aria-hidden="true" style="display:block;width:32px;height:2px;background:var(--accent);margin-bottom:20px;"></span>
+      <h2 style="margin:0 0 12px;font-weight:300;font-size:clamp(1.75rem,3.5vw,3rem);line-height:1;letter-spacing:.06em;text-transform:uppercase;">Catálogo</h2>
+      <p style="margin:0;color:var(--ink-soft);font-size:16px;">Encontrá tu modelo. Si no hay stock de tu talle, lo encargamos.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:{{ L.catCols }};gap:clamp(24px,3.5vw,56px);align-items:start;">
+      <sc-if value="{{ filtrosBackdrop }}" hint-placeholder-val="{{ false }}">
+        <div onClick="{{ closeFiltros }}" style="position:fixed;inset:0;z-index:85;background:rgba(17,17,17,.4);backdrop-filter:blur(4px);"></div>
+      </sc-if>
+      <aside data-trap="{{ filtrosTrap }}" aria-label="Filtros" style="{{ filterPanelStyle }}">
+        <img src="img/ilustraciones/ilus-06-circulos-grano.webp" alt="" aria-hidden="true" width="736" height="1067" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.08;filter:invert(1);mix-blend-mode:screen;pointer-events:none;">
+        <div style="position:relative;display:flex;flex-direction:column;gap:28px;">
+          <sc-if value="{{ isTab }}" hint-placeholder-val="{{ false }}">
+            <span aria-hidden="true" style="display:block;width:44px;height:4px;border-radius:4px;background:rgba(239,230,211,.3);margin:0 auto -12px;"></span>
+            <div style="display:flex;justify-content:space-between;align-items:center;">
+              <span style="font-size:14px;font-weight:400;letter-spacing:.14em;text-transform:uppercase;">Filtrar</span>
+              <button data-autofocus="" onClick="{{ closeFiltros }}" aria-label="Cerrar filtros" style="width:44px;height:44px;background:none;border:0;cursor:pointer;color:var(--ink);display:flex;align-items:center;justify-content:center;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M6 6l12 12M18 6L6 18"></path></svg></button>
+            </div>
+          </sc-if>
+          <sc-if value="{{ isDesk }}" hint-placeholder-val="{{ true }}">
+            <label style="display:flex;align-items:center;gap:10px;height:48px;padding:0 18px;background:rgba(255,255,255,.04);border:1px solid rgba(239,230,211,.14);border-radius:999px;transition:border-color .25s,box-shadow .25s;" style-hover="border-color:rgba(255,217,168,.45);">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><circle cx="11" cy="11" r="6.5"></circle><path d="M16 16l4.5 4.5"></path></svg>
+              <input type="search" value="{{ q }}" onInput="{{ onSearch }}" placeholder="Buscá por nombre" aria-label="Buscá por nombre" style="flex:1;min-width:0;border:0;background:transparent;outline:none;font-size:15px;font-weight:300;color:var(--ink);">
+            </label>
+          </sc-if>
+          <fieldset style="border:0;margin:0;padding:20px 0 0;border-top:1px solid rgba(239,230,211,.1);">
+            <legend style="padding:0;margin-bottom:14px;font-size:11px;font-weight:400;letter-spacing:.24em;text-transform:uppercase;color:var(--ink-soft);float:left;width:100%;">Marca</legend>
+            <div style="clear:both;display:flex;flex-wrap:wrap;gap:8px;">
+              <sc-for list="{{ marcaChips }}" as="c" hint-placeholder-count="4">
+                <button onClick="{{ c.toggle }}" aria-pressed="{{ c.pressed }}" style="min-height:40px;padding:0 16px;border-radius:999px;border:1px solid {{ c.bd }};background:{{ c.bg }};color:{{ c.color }};font-size:13px;font-weight:400;font-variation-settings:'wdth' 110;cursor:pointer;transition:background-color .2s,color .2s,border-color .2s;">{{ c.label }}</button>
+              </sc-for>
+            </div>
+          </fieldset>
+          <fieldset style="border:0;margin:0;padding:20px 0 0;border-top:1px solid rgba(239,230,211,.1);">
+            <legend style="padding:0;margin-bottom:14px;font-size:11px;font-weight:400;letter-spacing:.24em;text-transform:uppercase;color:var(--ink-soft);float:left;width:100%;">Superficie</legend>
+            <div style="clear:both;display:flex;flex-wrap:wrap;gap:8px;">
+              <sc-for list="{{ supChips }}" as="c" hint-placeholder-count="4">
+                <button onClick="{{ c.toggle }}" aria-pressed="{{ c.pressed }}" style="min-height:40px;padding:0 16px;border-radius:999px;border:1px solid {{ c.bd }};background:{{ c.bg }};color:{{ c.color }};font-size:13px;font-weight:400;font-variation-settings:'wdth' 110;cursor:pointer;transition:background-color .2s,color .2s,border-color .2s;">{{ c.label }}</button>
+              </sc-for>
+            </div>
+          </fieldset>
+          <fieldset style="border:0;margin:0;padding:20px 0 0;border-top:1px solid rgba(239,230,211,.1);">
+            <legend style="padding:0;margin-bottom:14px;font-size:11px;font-weight:400;letter-spacing:.24em;text-transform:uppercase;color:var(--ink-soft);float:left;width:100%;">Talle</legend>
+            <div style="clear:both;display:flex;flex-wrap:wrap;gap:8px;">
+              <sc-for list="{{ talleChips }}" as="t" hint-placeholder-count="11">
+                <button onClick="{{ t.toggle }}" aria-pressed="{{ t.pressed }}" style="width:42px;height:42px;padding:0;border-radius:50%;border:1px solid {{ t.bd }};background:{{ t.bg }};color:{{ t.color }};font-size:14px;font-weight:400;font-variant-numeric:tabular-nums;cursor:pointer;transition:background-color .25s,border-color .25s;">{{ t.label }}</button>
+              </sc-for>
+            </div>
+          </fieldset>
+          <div>
+            <div style="padding-top:20px;border-top:1px solid rgba(239,230,211,.1);margin-bottom:6px;font-size:11px;font-weight:400;letter-spacing:.24em;text-transform:uppercase;color:var(--ink-soft);">Precio</div>
+            <div ref="{{ trackRef }}" onPointerDown="{{ pr.trackDown }}" style="position:relative;height:44px;touch-action:none;margin:0 11px;">
+              <div style="position:absolute;left:0;right:0;top:21px;height:2px;background:var(--line);"></div>
+              <div style="position:absolute;top:21px;height:2px;border-radius:2px;background:#EFE6D3;left:{{ pr.lo }};right:{{ pr.hiR }};"></div>
+              <button role="slider" aria-label="Precio mínimo" aria-valuemin="{{ pr.min }}" aria-valuemax="{{ pr.max }}" aria-valuenow="{{ pr.vlo }}" aria-valuetext="{{ pr.loTxt }}" onPointerDown="{{ pr.downLo }}" onKeyDown="{{ pr.keyLo }}" style="position:absolute;top:0;left:{{ pr.lo }};width:44px;height:44px;margin-left:-22px;padding:0;border:0;background:transparent;cursor:grab;display:flex;align-items:center;justify-content:center;touch-action:none;"><span style="width:20px;height:20px;border-radius:50%;background:#EFE6D3;border:4px solid #1A1A1C;box-shadow:0 0 0 1px rgba(239,230,211,.5),0 4px 10px rgba(0,0,0,.4);"></span></button>
+              <button role="slider" aria-label="Precio máximo" aria-valuemin="{{ pr.min }}" aria-valuemax="{{ pr.max }}" aria-valuenow="{{ pr.vhi }}" aria-valuetext="{{ pr.hiTxt }}" onPointerDown="{{ pr.downHi }}" onKeyDown="{{ pr.keyHi }}" style="position:absolute;top:0;left:{{ pr.hi }};width:44px;height:44px;margin-left:-22px;padding:0;border:0;background:transparent;cursor:grab;display:flex;align-items:center;justify-content:center;touch-action:none;"><span style="width:20px;height:20px;border-radius:50%;background:#EFE6D3;border:4px solid #1A1A1C;box-shadow:0 0 0 1px rgba(239,230,211,.5),0 4px 10px rgba(0,0,0,.4);"></span></button>
+            </div>
+            <div style="display:flex;justify-content:space-between;font-size:13px;font-weight:400;font-variant-numeric:tabular-nums;"><span>{{ pr.loTxt }}</span><span>{{ pr.hiTxt }}</span></div>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px 12px;padding-top:20px;border-top:1px solid var(--line);">
+            <span style="font-size:11px;white-space:nowrap;color:var(--ink-soft);font-variant-numeric:tabular-nums;" aria-live="polite">{{ shown }} de {{ total }}</span>
+            <button onClick="{{ clearFilters }}" style="min-height:44px;display:flex;align-items:center;gap:6px;white-space:nowrap;background:none;border:0;padding:0;cursor:pointer;color:var(--ink-soft);font-size:11px;font-weight:400;letter-spacing:.06em;transition:color .2s;" style-hover="color:#FFD9A8;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.3-5.6M4 4v4h4"></path></svg>Limpiar filtros</button>
+          </div>
+          <sc-if value="{{ isTab }}" hint-placeholder-val="{{ false }}">
+            <button onClick="{{ closeFiltros }}" style="min-height:52px;background:#EFE6D3;color:#050506;border:0;border-radius:999px;font-size:14px;font-weight:400;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;">Ver {{ shown }} resultados</button>
+          </sc-if>
+        </div>
+      </aside>
+
+      <div style="min-width:0;">
+        <sc-if value="{{ isTab }}" hint-placeholder-val="{{ false }}">
+          <div style="display:flex;gap:8px;margin-bottom:12px;">
+            <label style="flex:1;min-width:0;display:flex;align-items:center;gap:10px;height:48px;padding:0 18px;background:rgba(255,255,255,.04);border:1px solid rgba(239,230,211,.14);border-radius:999px;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><circle cx="11" cy="11" r="6.5"></circle><path d="M16 16l4.5 4.5"></path></svg>
+              <input type="search" value="{{ q }}" onInput="{{ onSearch }}" placeholder="Buscá por nombre" aria-label="Buscá por nombre" style="flex:1;min-width:0;border:0;background:transparent;outline:none;font-size:16px;font-weight:300;color:var(--ink);">
+            </label>
+            <button onClick="{{ openFiltros }}" style="display:flex;align-items:center;gap:8px;height:48px;padding:0 20px;background:#EFE6D3;color:#050506;border:0;border-radius:999px;font-size:13px;font-weight:400;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M4 7h16M7 12h10M10 17h4"></path></svg>Filtrar<sc-if value="{{ hasActiveFilters }}" hint-placeholder-val="{{ false }}"><span style="width:6px;height:6px;border-radius:50%;background:var(--accent);"></span></sc-if>
+            </button>
+          </div>
+        </sc-if>
+        <div role="group" aria-label="Filtrar por marca" style="display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;margin-bottom:20px;padding:2px;">
+          <sc-for list="{{ marcaQuick }}" as="c" hint-placeholder-count="5">
+            <button onClick="{{ c.toggle }}" aria-pressed="{{ c.pressed }}" style="flex:0 0 auto;min-height:44px;padding:0 20px;border-radius:999px;border:1px solid {{ c.bd }};background:{{ c.bg }};color:{{ c.color }};font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;box-shadow:{{ c.sh }};transition:background-color .25s,color .25s,border-color .25s,box-shadow .25s;" style-hover="border-color:#FFD9A8;">{{ c.label }}</button>
+          </sc-for>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:20px;">
+          <span style="font-size:13px;color:var(--ink-soft);font-variant-numeric:tabular-nums;">Mostrando {{ shown }} de {{ total }}</span>
+          <div role="group" aria-label="Ordenar" style="display:flex;gap:4px;">
+            <sc-for list="{{ sortOpts }}" as="s" hint-placeholder-count="3">
+              <button onClick="{{ s.pick }}" aria-pressed="{{ s.pressed }}" style="min-height:44px;padding:0 12px;background:none;border:0;border-bottom:1px solid {{ s.under }};cursor:pointer;color:{{ s.color }};font-size:13px;font-weight:400;letter-spacing:.06em;">{{ s.label }}</button>
+            </sc-for>
+          </div>
+        </div>
+
+        <sc-if value="{{ loading }}" hint-placeholder-val="{{ true }}">
+          <div style="display:grid;grid-template-columns:{{ L.gridCols }};gap:{{ L.gridGap }};">
+            <sc-for list="{{ skel }}" as="k" hint-placeholder-count="6">
+              <div style="--ink:#111111;--ink-soft:#5C5C5C;--line:#D0D0D0;--surface:#F7F7F7;--bg:#E2E2E2;color:#111;background:#141416;border-radius:18px;border:1px solid rgba(239,230,211,.08);padding-bottom:20px;overflow:hidden;">
+                <div style="aspect-ratio:1;background:#E6E6E6;animation:pulse 1.4s ease-in-out infinite;"></div>
+                <div style="height:12px;width:40%;margin:20px 20px 10px;background:#E6E6E6;"></div>
+                <div style="height:16px;width:70%;margin:0 20px;background:#E6E6E6;"></div>
+              </div>
+            </sc-for>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ hasResults }}" hint-placeholder-val="{{ false }}">
+          <div style="display:grid;grid-template-columns:{{ L.gridCols }};gap:{{ L.gridGap }};">
+            <sc-for list="{{ lista }}" as="p" hint-placeholder-count="6">
+              <article data-tilt="" onClick="{{ p.open }}" onKeyDown="{{ p.key }}" onMouseEnter="{{ p.enter }}" onMouseLeave="{{ p.leave }}" tabIndex="0" role="button" aria-label="Ver {{ p.marca }} {{ p.nombre }}, {{ p.precioFmt }}" style="--ink:#FBF8F1;--ink-soft:#A9A49A;--line:rgba(239,230,211,.12);--surface:#141416;--bg:#ECECEC;--x:-999px;--y:-999px;position:relative;color:#FBF8F1;display:flex;flex-direction:column;background:linear-gradient(180deg,#141416,#0E0E10);border:1px solid rgba(239,230,211,.08);border-radius:18px;box-shadow:0 10px 30px rgba(0,0,0,.45),inset 0 1px 0 rgba(255,217,168,.10);cursor:pointer;overflow:hidden;isolation:isolate;transition:transform .5s var(--ease),box-shadow .45s var(--ease);min-width:0;will-change:transform;" style-hover="box-shadow:0 24px 60px rgba(0,0,0,.6),inset 0 1px 0 rgba(255,217,168,.18);">
+                <span aria-hidden="true" style="position:absolute;inset:0;z-index:2;pointer-events:none;border-radius:18px;background:radial-gradient(circle 240px at var(--x) var(--y),rgba(255,217,168,.25),rgba(255,217,168,0) 70%);mix-blend-mode:screen;"></span>
+                <sc-if value="{{ isMob }}" hint-placeholder-val="{{ false }}">
+                  <div style="display:grid;grid-auto-flow:column;grid-auto-columns:100%;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;aspect-ratio:1;background:var(--bg);margin:8px 8px 0;border-radius:12px;">
+                    <div style="scroll-snap-align:start;isolation:isolate;"><img src="{{ p.principal }}" alt="{{ p.alt1 }}" width="800" height="800" loading="lazy" style="width:100%;height:100%;object-fit:cover;mix-blend-mode:multiply;display:block;"></div>
+                    <div style="scroll-snap-align:start;isolation:isolate;"><img src="{{ p.hover }}" alt="{{ p.alt2 }}" width="800" height="800" loading="lazy" style="width:100%;height:100%;object-fit:cover;mix-blend-mode:multiply;display:block;"></div>
+                  </div>
+                </sc-if>
+                <sc-if value="{{ notMob }}" hint-placeholder-val="{{ true }}">
+                  <div style="position:relative;aspect-ratio:1;background:var(--bg);isolation:isolate;overflow:hidden;margin:10px 10px 0;border-radius:12px;">
+                    <img src="{{ p.principal }}" alt="{{ p.alt1 }}" width="800" height="800" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;mix-blend-mode:multiply;transition:opacity .4s ease;opacity:{{ p.op1 }};">
+                    <img src="{{ p.hover }}" alt="" aria-hidden="true" width="800" height="800" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;mix-blend-mode:multiply;transition:opacity .4s ease;opacity:{{ p.op2 }};">
+                  </div>
+                </sc-if>
+                <sc-if value="{{ p.fail }}" hint-placeholder-val="{{ false }}">
+                  <div style="aspect-ratio:1;margin-top:-100%;position:relative;background:#D9D9D9;display:flex;align-items:center;justify-content:center;padding:16px;text-align:center;font-size:14px;color:var(--ink-soft);">{{ p.nombre }}</div>
+                </sc-if>
+                <div style="padding:clamp(12px,1.6vw,22px);display:flex;flex-direction:column;gap:4px;flex:1;">
+                  <span style="font-size:11px;font-weight:400;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);">{{ p.marca }}</span>
+                  <h3 style="margin:0;font-size:clamp(14px,1.3vw,17px);font-weight:300;line-height:1.3;">{{ p.nombre }}</h3>
+                  <span style="font-size:clamp(15px,1.3vw,17px);font-weight:400;font-variant-numeric:tabular-nums;margin-top:4px;">{{ p.precioFmt }}</span>
+                  <span style="font-size:12px;color:var(--ink-soft);font-variant-numeric:tabular-nums;">{{ p.tallesTxt }}</span>
+                  <button onClick="{{ p.add }}" style="margin-top:14px;width:100%;min-height:44px;background-color:transparent;color:var(--ink);border:1px solid rgba(239,230,211,.4);border-radius:999px;font-size:12px;font-weight:400;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;background-image:linear-gradient(var(--accent),var(--accent));background-repeat:no-repeat;background-position:left bottom;background-size:0% 3px;transition:background-size .45s var(--ease),background-color .3s,color .3s;" style-hover="background-size:100% 3px;background-color:#EFE6D3;color:#050506;">Agregar al carrito</button>
+                </div>
+              </article>
+            </sc-for>
+            <sc-for list="{{ slots }}" as="sl" hint-placeholder-count="0">
+              <div aria-hidden="true" style="--ink:#111111;--ink-soft:#5C5C5C;--line:#D0D0D0;--surface:#F7F7F7;--bg:#E2E2E2;color:#111;display:flex;flex-direction:column;background:#161618;border-radius:18px;border:1px dashed rgba(239,230,211,.18);overflow:hidden;min-width:0;">
+                <div style="aspect-ratio:1;background-color:var(--bg);background-image:repeating-linear-gradient(135deg,rgba(0,0,0,.04) 0 10px,transparent 10px 20px);display:flex;align-items:center;justify-content:center;padding:12px;text-align:center;">
+                  <span style="font-family:ui-monospace,Menlo,monospace;font-size:12px;color:#6A6A6A;">acá va el botín</span>
+                </div>
+                <div style="padding:clamp(12px,1.6vw,22px);display:flex;flex-direction:column;gap:6px;font-family:ui-monospace,Menlo,monospace;font-size:12px;color:#7A7A7A;">
+                  <span>[[marca]]</span>
+                  <span style="font-size:13px;color:#555;">[[nombre del modelo]]</span>
+                  <span>[[precio]]</span>
+                  <span>[[talles]]</span>
+                  <span style="margin-top:14px;height:44px;border:1px dashed #BDBDBD;border-radius:2px;display:flex;align-items:center;justify-content:center;">[[botón]]</span>
+                </div>
+              </div>
+            </sc-for>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ noResults }}" hint-placeholder-val="{{ false }}">
+          <div style="position:relative;overflow:hidden;isolation:isolate;min-height:420px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:24px;padding:48px 24px;text-align:center;background:#111;color:#fff;border-radius:3px;">
+            <img src="img/ilustraciones/ilus-06-circulos-grano.webp" alt="" aria-hidden="true" width="736" height="1067" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.28;filter:invert(1);z-index:-1;">
+            <p style="margin:0;max-width:420px;font-size:clamp(1.25rem,2vw,1.75rem);line-height:1.25;letter-spacing:.02em;text-wrap:balance;">No encontramos ese modelo. Escribinos y lo buscamos.</p>
+            <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;">
+              <button onClick="{{ searchWA }}" style="min-height:52px;padding:0 28px;background:#fff;color:#111;border:0;border-radius:2px;font-size:14px;font-weight:400;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;">Escribinos por WhatsApp</button>
+              <button onClick="{{ clearFilters }}" style="min-height:52px;padding:0 28px;background:transparent;color:#fff;border:1px solid #fff;border-radius:2px;font-size:14px;font-weight:400;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;">Limpiar filtros</button>
+            </div>
+          </div>
+        </sc-if>
+        <sc-if value="{{ loadError }}" hint-placeholder-val="{{ false }}">
+          <p style="padding:48px 0;color:var(--ink-soft);">No pudimos cargar el catálogo. Recargá la página o escribinos por WhatsApp.</p>
+        </sc-if>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CÓMO COMPRAR -->
+<section id="como-comprar" data-screen-label="Cómo comprar" style="position:relative;background:#0C0C0D;color:#FBF8F1;overflow:hidden;isolation:isolate;padding:clamp(96px,11vw,170px) clamp(16px,4vw,56px);">
+  <img data-howbg="" src="img/ilustraciones/ilus-06-circulos-grano.webp" alt="" aria-hidden="true" width="736" height="1067" loading="lazy" style="position:absolute;left:0;top:-15%;width:100%;height:130%;object-fit:cover;opacity:.3;filter:invert(1);mix-blend-mode:screen;z-index:-2;pointer-events:none;">
+  <div aria-hidden="true" style="position:absolute;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(180deg,#0C0C0D 0%,rgba(12,12,13,.35) 22%,rgba(12,12,13,.35) 78%,#0C0C0D 100%);"></div>
+  <div style="max-width:1440px;margin:0 auto;">
+    <div data-reveal="" style="margin-bottom:clamp(56px,7vw,104px);">
+      <span aria-hidden="true" style="display:block;width:32px;height:2px;background:#FFD9A8;margin-bottom:20px;"></span>
+      <h2 style="margin:0 0 14px;font-weight:300;font-size:clamp(1.75rem,3.5vw,3rem);line-height:1;letter-spacing:.06em;text-transform:uppercase;">Cómo comprar</h2>
+      <p style="margin:0;color:rgba(251,248,241,.72);font-size:16px;">Cuatro pasos y tus botines están en camino.</p>
+    </div>
+    <div style="position:relative;">
+      <svg aria-hidden="true" viewBox="{{ L.howVB }}" preserveAspectRatio="none" style="position:absolute;left:{{ L.howLineL }};top:{{ L.howLineT }};width:{{ L.howLineW }};height:{{ L.howLineH }};overflow:visible;pointer-events:none;">
+        <path d="{{ L.howPath }}" pathLength="1" fill="none" stroke="rgba(239,230,211,.14)" stroke-width="1" vector-effect="non-scaling-stroke"></path>
+        <path data-howline="" d="{{ L.howPath }}" pathLength="1" fill="none" stroke="#FFD9A8" stroke-width="1.5" stroke-dasharray="1" stroke-dashoffset="0" vector-effect="non-scaling-stroke"></path>
+      </svg>
+      <ol style="list-style:none;margin:0;padding:{{ L.howPad }};display:grid;grid-template-columns:{{ L.howCols }};gap:{{ L.howGap }};">
+        <li data-step="1" style="position:relative;display:flex;flex-direction:column;align-items:{{ L.howAlign }};text-align:{{ L.howTA }};gap:18px;min-width:0;">
+          <span data-dot="" aria-hidden="true" style="position:absolute;left:{{ L.howDotL }};top:{{ L.howDotT }};width:9px;height:9px;border-radius:50%;background:#050506;border:1px solid #FFD9A8;box-shadow:0 0 12px rgba(255,217,168,.6);"></span>
+          <div data-num="" aria-hidden="true" style="position:relative;font-family:'Unbounded',sans-serif;font-weight:800;font-size:clamp(5rem,10vw,9rem);line-height:1;letter-spacing:-.03em;transition:transform .35s cubic-bezier(.2,.7,.2,1);transform-style:preserve-3d;">
+            <span data-echo="" style="position:absolute;left:0;top:0;color:transparent;-webkit-text-stroke:1px rgba(255,217,168,.55);opacity:0;transition:opacity .35s,transform .35s cubic-bezier(.2,.7,.2,1);">01</span>
+            <span data-out="" style="position:relative;display:block;color:rgba(239,230,211,.04);-webkit-text-stroke:1.5px #EFE6D3;background-image:url(img/ilustraciones/ilus-06-circulos-grano.webp);background-size:200px;-webkit-background-clip:text;background-clip:text;">01</span>
+            <span data-fill="" style="position:absolute;left:0;top:0;color:transparent;background:linear-gradient(0deg,#EFE6D3,#FFD9A8);-webkit-background-clip:text;background-clip:text;clip-path:inset(0 0 0 0);"><span style="visibility:hidden;">0</span>1</span>
+            <span data-flash="" style="position:absolute;left:0;top:0;color:transparent;background-image:linear-gradient(100deg,rgba(255,255,255,0) 40%,rgba(255,255,255,.95) 50%,rgba(255,255,255,0) 60%);background-size:300% 100%;background-position:120% 0;-webkit-background-clip:text;background-clip:text;"><span style="visibility:hidden;">0</span>1</span>
+          </div>
+          <h3 style="margin:0;font-weight:400;font-size:clamp(1.15rem,1.5vw,1.4rem);letter-spacing:.08em;text-transform:uppercase;"><span style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);">Paso 1: </span>Elegí tu botín</h3>
+          <p style="margin:0;font-size:15px;line-height:1.6;color:rgba(251,248,241,.72);text-wrap:pretty;max-width:34ch;">Filtrá por marca, superficie y talle, y sumalo al carrito.</p>
+        </li>
+        <li data-step="2" style="position:relative;display:flex;flex-direction:column;align-items:{{ L.howAlign }};text-align:{{ L.howTA }};gap:18px;min-width:0;">
+          <span data-dot="" aria-hidden="true" style="position:absolute;left:{{ L.howDotL }};top:{{ L.howDotT }};width:9px;height:9px;border-radius:50%;background:#050506;border:1px solid #FFD9A8;box-shadow:0 0 12px rgba(255,217,168,.6);"></span>
+          <div data-num="" aria-hidden="true" style="position:relative;font-family:'Unbounded',sans-serif;font-weight:800;font-size:clamp(5rem,10vw,9rem);line-height:1;letter-spacing:-.03em;transition:transform .35s cubic-bezier(.2,.7,.2,1);transform-style:preserve-3d;">
+            <span data-echo="" style="position:absolute;left:0;top:0;color:transparent;-webkit-text-stroke:1px rgba(255,217,168,.55);opacity:0;transition:opacity .35s,transform .35s cubic-bezier(.2,.7,.2,1);">02</span>
+            <span data-out="" style="position:relative;display:block;color:rgba(239,230,211,.04);-webkit-text-stroke:1.5px #EFE6D3;background-image:url(img/ilustraciones/ilus-06-circulos-grano.webp);background-size:200px;-webkit-background-clip:text;background-clip:text;">02</span>
+            <span data-fill="" style="position:absolute;left:0;top:0;color:transparent;background:linear-gradient(0deg,#EFE6D3,#FFD9A8);-webkit-background-clip:text;background-clip:text;clip-path:inset(0 0 0 0);"><span style="visibility:hidden;">0</span>2</span>
+            <span data-flash="" style="position:absolute;left:0;top:0;color:transparent;background-image:linear-gradient(100deg,rgba(255,255,255,0) 40%,rgba(255,255,255,.95) 50%,rgba(255,255,255,0) 60%);background-size:300% 100%;background-position:120% 0;-webkit-background-clip:text;background-clip:text;"><span style="visibility:hidden;">0</span>2</span>
+          </div>
+          <h3 style="margin:0;font-weight:400;font-size:clamp(1.15rem,1.5vw,1.4rem);letter-spacing:.08em;text-transform:uppercase;"><span style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);">Paso 2: </span>Escribinos por WhatsApp</h3>
+          <p style="margin:0;font-size:15px;line-height:1.6;color:rgba(251,248,241,.72);text-wrap:pretty;max-width:34ch;">Mandá tu pedido desde el carrito y te confirmamos stock y precio.</p>
+        </li>
+        <li data-step="3" style="position:relative;display:flex;flex-direction:column;align-items:{{ L.howAlign }};text-align:{{ L.howTA }};gap:18px;min-width:0;">
+          <span data-dot="" aria-hidden="true" style="position:absolute;left:{{ L.howDotL }};top:{{ L.howDotT }};width:9px;height:9px;border-radius:50%;background:#050506;border:1px solid #FFD9A8;box-shadow:0 0 12px rgba(255,217,168,.6);"></span>
+          <div data-num="" aria-hidden="true" style="position:relative;font-family:'Unbounded',sans-serif;font-weight:800;font-size:clamp(5rem,10vw,9rem);line-height:1;letter-spacing:-.03em;transition:transform .35s cubic-bezier(.2,.7,.2,1);transform-style:preserve-3d;">
+            <span data-echo="" style="position:absolute;left:0;top:0;color:transparent;-webkit-text-stroke:1px rgba(255,217,168,.55);opacity:0;transition:opacity .35s,transform .35s cubic-bezier(.2,.7,.2,1);">03</span>
+            <span data-out="" style="position:relative;display:block;color:rgba(239,230,211,.04);-webkit-text-stroke:1.5px #EFE6D3;background-image:url(img/ilustraciones/ilus-06-circulos-grano.webp);background-size:200px;-webkit-background-clip:text;background-clip:text;">03</span>
+            <span data-fill="" style="position:absolute;left:0;top:0;color:transparent;background:linear-gradient(0deg,#EFE6D3,#FFD9A8);-webkit-background-clip:text;background-clip:text;clip-path:inset(0 0 0 0);"><span style="visibility:hidden;">0</span>3</span>
+            <span data-flash="" style="position:absolute;left:0;top:0;color:transparent;background-image:linear-gradient(100deg,rgba(255,255,255,0) 40%,rgba(255,255,255,.95) 50%,rgba(255,255,255,0) 60%);background-size:300% 100%;background-position:120% 0;-webkit-background-clip:text;background-clip:text;"><span style="visibility:hidden;">0</span>3</span>
+          </div>
+          <h3 style="margin:0;font-weight:400;font-size:clamp(1.15rem,1.5vw,1.4rem);letter-spacing:.08em;text-transform:uppercase;"><span style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);">Paso 3: </span>Aboná tu pedido</h3>
+          <p style="margin:0;font-size:15px;line-height:1.6;color:rgba(251,248,241,.72);text-wrap:pretty;max-width:34ch;">Pagás para reservar o encargar [[medios de pago]]. Encargos: 3 a 5 semanas.</p>
+        </li>
+        <li data-step="4" style="position:relative;display:flex;flex-direction:column;align-items:{{ L.howAlign }};text-align:{{ L.howTA }};gap:18px;min-width:0;">
+          <span data-dot="" aria-hidden="true" style="position:absolute;left:{{ L.howDotL }};top:{{ L.howDotT }};width:9px;height:9px;border-radius:50%;background:#050506;border:1px solid #FFD9A8;box-shadow:0 0 12px rgba(255,217,168,.6);"></span>
+          <div data-num="" aria-hidden="true" style="position:relative;font-family:'Unbounded',sans-serif;font-weight:800;font-size:clamp(5rem,10vw,9rem);line-height:1;letter-spacing:-.03em;transition:transform .35s cubic-bezier(.2,.7,.2,1);transform-style:preserve-3d;">
+            <span data-echo="" style="position:absolute;left:0;top:0;color:transparent;-webkit-text-stroke:1px rgba(255,217,168,.55);opacity:0;transition:opacity .35s,transform .35s cubic-bezier(.2,.7,.2,1);">04</span>
+            <span data-out="" style="position:relative;display:block;color:rgba(239,230,211,.04);-webkit-text-stroke:1.5px #EFE6D3;background-image:url(img/ilustraciones/ilus-06-circulos-grano.webp);background-size:200px;-webkit-background-clip:text;background-clip:text;">04</span>
+            <span data-fill="" style="position:absolute;left:0;top:0;color:transparent;background:linear-gradient(0deg,#EFE6D3,#FFD9A8);-webkit-background-clip:text;background-clip:text;clip-path:inset(0 0 0 0);"><span style="visibility:hidden;">0</span>4</span>
+            <span data-flash="" style="position:absolute;left:0;top:0;color:transparent;background-image:linear-gradient(100deg,rgba(255,255,255,0) 40%,rgba(255,255,255,.95) 50%,rgba(255,255,255,0) 60%);background-size:300% 100%;background-position:120% 0;-webkit-background-clip:text;background-clip:text;"><span style="visibility:hidden;">0</span>4</span>
+          </div>
+          <h3 style="margin:0;font-weight:400;font-size:clamp(1.15rem,1.5vw,1.4rem);letter-spacing:.08em;text-transform:uppercase;"><span style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);">Paso 4: </span>Recibilo o retiralo</h3>
+          <p style="margin:0;font-size:15px;line-height:1.6;color:rgba(251,248,241,.72);text-wrap:pretty;max-width:34ch;">Retiro en [[punto de retiro]] o envío a todo el país.</p>
+        </li>
+      </ol>
+    </div>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:clamp(56px,6vw,88px);">
+      <button onClick="{{ go.catalogo }}" style="min-height:52px;padding:0 32px;background:#EFE6D3;color:#050506;border:0;border-radius:999px;font-size:13px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;cursor:pointer;transition:background-color .3s;" style-hover="background-color:#FFD9A8;">Empezá por el catálogo</button>
+      <button onClick="{{ contact }}" style="min-height:52px;padding:0 32px;background:transparent;color:#FBF8F1;border:1px solid rgba(251,248,241,.45);border-radius:999px;font-size:13px;font-weight:400;letter-spacing:.16em;text-transform:uppercase;cursor:pointer;transition:border-color .3s;" style-hover="border-color:#FFD9A8;">Tengo una duda</button>
+    </div>
+  </div>
+</section>
+
+<!-- NOSOTROS -->
+<section id="nosotros" data-screen-label="Nosotros" style="--ink:#F2F2F2;--ink-soft:#A6A6AA;--line:#46464B;--surface:#36363A;--bg:#2B2B2E;color:#F2F2F2;--bg:#1A1A1C;position:relative;background:#1A1A1C;padding:clamp(80px,10vw,150px) clamp(16px,4vw,56px);overflow:hidden;isolation:isolate;">
+  <img src="img/ilustraciones/ilus-08-seda-movimiento-h.webp" alt="" aria-hidden="true" width="920" height="736" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.32;mix-blend-mode:screen;z-index:-1;pointer-events:none;">
+  <div aria-hidden="true" style="position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(26,26,28,.85) 0%,rgba(26,26,28,.35) 60%,rgba(26,26,28,.6) 100%);pointer-events:none;"></div>
+  <div style="max-width:1440px;margin:0 auto;display:grid;grid-template-columns:{{ L.nosCols }};gap:max(64px,5vw);align-items:center;">
+    <div data-reveal="">
+      <span aria-hidden="true" style="display:block;width:32px;height:2px;background:var(--accent);margin-bottom:20px;"></span>
+      <h2 style="margin:0 0 24px;font-weight:300;font-size:clamp(1.75rem,3.5vw,3rem);line-height:1.02;letter-spacing:.06em;text-transform:uppercase;">Más que<br>una tienda</h2>
+      <p style="margin:0 0 16px;font-size:17px;text-wrap:pretty;max-width:440px;">Somos {{ brand }}, una tienda pensada por y para jugadores. Elegimos cada modelo por cómo rinde en la cancha y te ayudamos a encontrar el talle justo, con atención directa y envíos a todo el país.</p>
+      <p style="margin:0;font-size:13px;color:var(--ink-soft);font-family:ui-monospace,Menlo,monospace;">[[texto de Nosotros que te paso después]]</p>
+    </div>
+    <div data-reveal="" role="region" aria-roledescription="carrusel" aria-label="Fotos de Nosotros" tabIndex="0" onKeyDown="{{ nosKey }}" onMouseEnter="{{ nosPause }}" onMouseLeave="{{ nosResume }}" onPointerDown="{{ nosDown }}" onPointerUp="{{ nosUp }}" style="position:relative;outline-offset:6px;">
+      <div style="position:relative;height:clamp(280px,34vw,540px);touch-action:pan-y;overflow:hidden;">
+        <sc-for list="{{ nosSlides }}" as="s" hint-placeholder-count="5">
+          <div aria-hidden="{{ s.hidden }}" style="position:absolute;top:0;bottom:0;left:19%;width:62%;border-radius:3px;overflow:hidden;background-color:#D6D6D6;background-image:repeating-linear-gradient(135deg,rgba(0,0,0,.045) 0 12px,transparent 12px 24px);display:flex;align-items:flex-end;padding:20px;box-shadow:var(--shadow);transition:transform .5s var(--ease),opacity .5s var(--ease);transform:{{ s.tf }};opacity:{{ s.op }};z-index:{{ s.z }};">
+            <span style="font-family:ui-monospace,Menlo,monospace;font-size:12px;color:#555;background:rgba(247,247,247,.85);padding:6px 10px;border-radius:2px;">{{ s.label }}</span>
+          </div>
+        </sc-for>
+        <button onClick="{{ nosPrev }}" aria-label="Foto anterior" style="position:absolute;left:0;top:50%;transform:translateY(-50%);z-index:5;width:48px;height:48px;border-radius:50%;border:1px solid var(--ink);background:rgba(26,26,28,.85);color:var(--ink);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:border-color .3s;" style-hover="border-color:var(--accent);"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M15 5l-7 7 7 7"></path></svg></button>
+        <button onClick="{{ nosNext }}" aria-label="Foto siguiente" style="position:absolute;right:0;top:50%;transform:translateY(-50%);z-index:5;width:48px;height:48px;border-radius:50%;border:1px solid var(--ink);background:rgba(26,26,28,.85);color:var(--ink);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:border-color .3s;" style-hover="border-color:var(--accent);"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M9 5l7 7-7 7"></path></svg></button>
+      </div>
+      <div style="display:flex;justify-content:center;gap:4px;margin-top:20px;">
+        <sc-for list="{{ nosSlides }}" as="s" hint-placeholder-count="5">
+          <button onClick="{{ s.go }}" aria-label="Ir a la foto {{ s.n }}" aria-current="{{ s.current }}" style="width:32px;height:44px;background:none;border:0;cursor:pointer;display:flex;align-items:center;justify-content:center;padding:0;"><span style="display:block;height:2px;width:{{ s.dotW }};background:{{ s.dotBg }};transition:width .4s var(--ease),background-color .4s;"></span></button>
+        </sc-for>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- FOOTER -->
+<footer data-screen-label="Footer" style="position:relative;background:radial-gradient(ellipse 55% 30% at 50% 62%,rgba(255,170,90,.20),rgba(255,170,90,0) 70%),linear-gradient(180deg,#141416 0%,#4A4A4E 22%,#5A5A5E 55%,#3A3A3D 75%,#1C1C1E 100%);color:#F4F2EE;overflow:hidden;isolation:isolate;padding:clamp(72px,9vw,128px) clamp(16px,4vw,56px) 32px;">
+  <span data-forb="" aria-hidden="true" style="position:absolute;left:10%;top:38%;width:min(60vw,760px);aspect-ratio:2.2;border-radius:50%;background:radial-gradient(closest-side,rgba(255,180,90,.28),rgba(255,180,90,0));filter:blur(30px);z-index:-1;pointer-events:none;"></span>
+  <img src="img/ilustraciones/ilus-02-lineas-blancas-horizontal.webp" alt="" aria-hidden="true" width="2133" height="1200" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:.12;mix-blend-mode:screen;z-index:-1;pointer-events:none;">
+  <div style="max-width:1600px;margin:0 auto;">
+    <div ref="{{ footRef }}" onMouseMove="{{ footMove }}" onMouseLeave="{{ footLeave }}" aria-label="{{ brand }}" style="position:relative;--mx:-999px;--my:-999px;user-select:none;cursor:default;">
+      <div aria-hidden="true" style="font-family:'Unbounded',sans-serif;font-weight:700;font-size:{{ footSize }};line-height:.95;letter-spacing:-.01em;text-transform:uppercase;text-align:center;white-space:nowrap;color:rgba(255,255,255,.08);-webkit-text-stroke:1px rgba(255,255,255,.55);">{{ brand }}</div>
+      <div aria-hidden="true" style="position:absolute;inset:0;font-family:'Unbounded',sans-serif;font-weight:700;font-size:{{ footSize }};line-height:.95;letter-spacing:-.01em;text-transform:uppercase;text-align:center;white-space:nowrap;color:var(--accent);-webkit-mask-image:radial-gradient(circle 220px at var(--mx) var(--my),#000 0%,rgba(0,0,0,.6) 45%,transparent 100%);mask-image:radial-gradient(circle 220px at var(--mx) var(--my),#000 0%,rgba(0,0,0,.6) 45%,transparent 100%);">{{ brand }}</div>
+    </div>
+    <div style="display:grid;grid-template-columns:{{ L.footCols }};gap:clamp(32px,4vw,64px);margin:clamp(56px,7vw,96px) 0 clamp(48px,6vw,80px);">
+      <nav aria-label="Tienda" data-fcard="" data-reveal="" style="--x:-999px;--y:-999px;position:relative;padding:clamp(22px,2.4vw,32px);border-radius:28px;background:radial-gradient(circle 200px at var(--x) var(--y),rgba(255,200,130,.26),rgba(255,200,130,0) 70%),linear-gradient(180deg,rgba(255,255,255,.18),rgba(255,255,255,.05));border:1px solid rgba(255,255,255,.2);box-shadow:inset 0 1px 0 rgba(255,255,255,.32),0 34px 70px -22px rgba(0,0,0,.7),0 12px 24px -8px rgba(0,0,0,.35);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);transition:transform .45s cubic-bezier(.2,.7,.2,1),box-shadow .45s cubic-bezier(.2,.7,.2,1),border-color .45s;will-change:transform;" style-hover="border-color:rgba(255,210,150,.55);box-shadow:inset 0 1px 0 rgba(255,255,255,.4),0 50px 90px -24px rgba(0,0,0,.8),0 0 40px -6px rgba(255,180,90,.35);"><h3 style="font-family:'Unbounded',sans-serif;font-weight:600;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#FFE6C2;margin:0 0 20px;text-shadow:0 0 18px rgba(255,180,90,.75);">Tienda</h3><div style="display:flex;flex-direction:column;gap:14px;"><button onClick="{{ go.inicio }}" style="display:inline-block;align-self:flex-start;min-height:32px;background:none;border:0;padding:0 0 2px;cursor:pointer;color:#FBF8F1;text-decoration:none;font-family:'Unbounded',sans-serif;font-size:17px;font-weight:300;text-align:left;background-image:linear-gradient(90deg,#FFE6C2,#FFB45A);background-repeat:no-repeat;background-position:left bottom;background-size:0% 1px;transition:background-size .4s cubic-bezier(.2,.7,.2,1),transform .4s cubic-bezier(.2,.7,.2,1);" style-hover="background-size:100% 1px;transform:translateX(4px);">Inicio</button><button onClick="{{ go.catalogo }}" style="display:inline-block;align-self:flex-start;min-height:32px;background:none;border:0;padding:0 0 2px;cursor:pointer;color:#FBF8F1;text-decoration:none;font-family:'Unbounded',sans-serif;font-size:17px;font-weight:300;text-align:left;background-image:linear-gradient(90deg,#FFE6C2,#FFB45A);background-repeat:no-repeat;background-position:left bottom;background-size:0% 1px;transition:background-size .4s cubic-bezier(.2,.7,.2,1),transform .4s cubic-bezier(.2,.7,.2,1);" style-hover="background-size:100% 1px;transform:translateX(4px);">Catálogo</button><button onClick="{{ go.destacados }}" style="display:inline-block;align-self:flex-start;min-height:32px;background:none;border:0;padding:0 0 2px;cursor:pointer;color:#FBF8F1;text-decoration:none;font-family:'Unbounded',sans-serif;font-size:17px;font-weight:300;text-align:left;background-image:linear-gradient(90deg,#FFE6C2,#FFB45A);background-repeat:no-repeat;background-position:left bottom;background-size:0% 1px;transition:background-size .4s cubic-bezier(.2,.7,.2,1),transform .4s cubic-bezier(.2,.7,.2,1);" style-hover="background-size:100% 1px;transform:translateX(4px);">Destacados</button><button onClick="{{ openCart }}" style="display:inline-block;align-self:flex-start;min-height:32px;background:none;border:0;padding:0 0 2px;cursor:pointer;color:#FBF8F1;text-decoration:none;font-family:'Unbounded',sans-serif;font-size:17px;font-weight:300;text-align:left;background-image:linear-gradient(90deg,#FFE6C2,#FFB45A);background-repeat:no-repeat;background-position:left bottom;background-size:0% 1px;transition:background-size .4s cubic-bezier(.2,.7,.2,1),transform .4s cubic-bezier(.2,.7,.2,1);" style-hover="background-size:100% 1px;transform:translateX(4px);">Mi carrito</button></div></nav>
+      <nav aria-label="Marcas" data-fcard="" data-reveal="" style="--x:-999px;--y:-999px;position:relative;padding:clamp(22px,2.4vw,32px);border-radius:28px;background:radial-gradient(circle 200px at var(--x) var(--y),rgba(255,200,130,.26),rgba(255,200,130,0) 70%),linear-gradient(180deg,rgba(255,255,255,.18),rgba(255,255,255,.05));border:1px solid rgba(255,255,255,.2);box-shadow:inset 0 1px 0 rgba(255,255,255,.32),0 34px 70px -22px rgba(0,0,0,.7),0 12px 24px -8px rgba(0,0,0,.35);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);transition:transform .45s cubic-bezier(.2,.7,.2,1),box-shadow .45s cubic-bezier(.2,.7,.2,1),border-color .45s;will-change:transform;" style-hover="border-color:rgba(255,210,150,.55);box-shadow:inset 0 1px 0 rgba(255,255,255,.4),0 50px 90px -24px rgba(0,0,0,.8),0 0 40px -6px rgba(255,180,90,.35);"><h3 style="font-family:'Unbounded',sans-serif;font-weight:600;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#FFE6C2;margin:0 0 20px;text-shadow:0 0 18px rgba(255,180,90,.75);">Marcas</h3><div style="display:flex;flex-direction:column;gap:14px;"><sc-for list="{{ heroBrands }}" as="b" hint-placeholder-count="4"><a href="{{ b.href }}" onClick="{{ b.go }}" style="display:inline-block;align-self:flex-start;min-height:32px;background:none;border:0;padding:0 0 2px;cursor:pointer;color:#FBF8F1;text-decoration:none;font-family:'Unbounded',sans-serif;font-size:17px;font-weight:300;text-align:left;background-image:linear-gradient(90deg,#FFE6C2,#FFB45A);background-repeat:no-repeat;background-position:left bottom;background-size:0% 1px;transition:background-size .4s cubic-bezier(.2,.7,.2,1),transform .4s cubic-bezier(.2,.7,.2,1);" style-hover="background-size:100% 1px;transform:translateX(4px);">{{ b.nombre }}</a></sc-for></div></nav>
+      <nav aria-label="Ayuda" data-fcard="" data-reveal="" style="--x:-999px;--y:-999px;position:relative;padding:clamp(22px,2.4vw,32px);border-radius:28px;background:radial-gradient(circle 200px at var(--x) var(--y),rgba(255,200,130,.26),rgba(255,200,130,0) 70%),linear-gradient(180deg,rgba(255,255,255,.18),rgba(255,255,255,.05));border:1px solid rgba(255,255,255,.2);box-shadow:inset 0 1px 0 rgba(255,255,255,.32),0 34px 70px -22px rgba(0,0,0,.7),0 12px 24px -8px rgba(0,0,0,.35);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);transition:transform .45s cubic-bezier(.2,.7,.2,1),box-shadow .45s cubic-bezier(.2,.7,.2,1),border-color .45s;will-change:transform;" style-hover="border-color:rgba(255,210,150,.55);box-shadow:inset 0 1px 0 rgba(255,255,255,.4),0 50px 90px -24px rgba(0,0,0,.8),0 0 40px -6px rgba(255,180,90,.35);"><h3 style="font-family:'Unbounded',sans-serif;font-weight:600;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#FFE6C2;margin:0 0 20px;text-shadow:0 0 18px rgba(255,180,90,.75);">Ayuda</h3><div style="display:flex;flex-direction:column;gap:14px;"><button onClick="{{ go.comprar }}" style="display:inline-block;align-self:flex-start;min-height:32px;background:none;border:0;padding:0 0 2px;cursor:pointer;color:#FBF8F1;text-decoration:none;font-family:'Unbounded',sans-serif;font-size:17px;font-weight:300;text-align:left;background-image:linear-gradient(90deg,#FFE6C2,#FFB45A);background-repeat:no-repeat;background-position:left bottom;background-size:0% 1px;transition:background-size .4s cubic-bezier(.2,.7,.2,1),transform .4s cubic-bezier(.2,.7,.2,1);" style-hover="background-size:100% 1px;transform:translateX(4px);">Cómo comprar</button><button onClick="{{ go.comprar }}" style="display:inline-block;align-self:flex-start;min-height:32px;background:none;border:0;padding:0 0 2px;cursor:pointer;color:#FBF8F1;text-decoration:none;font-family:'Unbounded',sans-serif;font-size:17px;font-weight:300;text-align:left;background-image:linear-gradient(90deg,#FFE6C2,#FFB45A);background-repeat:no-repeat;background-position:left bottom;background-size:0% 1px;transition:background-size .4s cubic-bezier(.2,.7,.2,1),transform .4s cubic-bezier(.2,.7,.2,1);" style-hover="background-size:100% 1px;transform:translateX(4px);">Envíos y encargos</button><button onClick="{{ talleWA }}" style="display:inline-block;align-self:flex-start;min-height:32px;background:none;border:0;padding:0 0 2px;cursor:pointer;color:#FBF8F1;text-decoration:none;font-family:'Unbounded',sans-serif;font-size:17px;font-weight:300;text-align:left;background-image:linear-gradient(90deg,#FFE6C2,#FFB45A);background-repeat:no-repeat;background-position:left bottom;background-size:0% 1px;transition:background-size .4s cubic-bezier(.2,.7,.2,1),transform .4s cubic-bezier(.2,.7,.2,1);" style-hover="background-size:100% 1px;transform:translateX(4px);">Guía de talles</button><button onClick="{{ contact }}" style="display:inline-block;align-self:flex-start;min-height:32px;background:none;border:0;padding:0 0 2px;cursor:pointer;color:#FBF8F1;text-decoration:none;font-family:'Unbounded',sans-serif;font-size:17px;font-weight:300;text-align:left;background-image:linear-gradient(90deg,#FFE6C2,#FFB45A);background-repeat:no-repeat;background-position:left bottom;background-size:0% 1px;transition:background-size .4s cubic-bezier(.2,.7,.2,1),transform .4s cubic-bezier(.2,.7,.2,1);" style-hover="background-size:100% 1px;transform:translateX(4px);">Preguntas por WhatsApp</button></div></nav>
+      <div data-fcard="" data-reveal="" style="--x:-999px;--y:-999px;position:relative;padding:clamp(22px,2.4vw,32px);border-radius:28px;background:radial-gradient(circle 200px at var(--x) var(--y),rgba(255,200,130,.26),rgba(255,200,130,0) 70%),linear-gradient(180deg,rgba(255,255,255,.18),rgba(255,255,255,.05));border:1px solid rgba(255,255,255,.2);box-shadow:inset 0 1px 0 rgba(255,255,255,.32),0 34px 70px -22px rgba(0,0,0,.7),0 12px 24px -8px rgba(0,0,0,.35);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);transition:transform .45s cubic-bezier(.2,.7,.2,1),box-shadow .45s cubic-bezier(.2,.7,.2,1),border-color .45s;will-change:transform;" style-hover="border-color:rgba(255,210,150,.55);box-shadow:inset 0 1px 0 rgba(255,255,255,.4),0 50px 90px -24px rgba(0,0,0,.8),0 0 40px -6px rgba(255,180,90,.35);"><h3 style="font-family:'Unbounded',sans-serif;font-weight:600;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#FFE6C2;margin:0 0 20px;text-shadow:0 0 18px rgba(255,180,90,.75);">Contacto</h3><div style="display:flex;flex-direction:column;gap:14px;"><a href="https://wa.me/5493413226227" target="_blank" rel="noopener" style="display:inline-block;align-self:flex-start;min-height:32px;background:none;border:0;padding:0 0 2px;cursor:pointer;color:#FBF8F1;text-decoration:none;font-family:'Unbounded',sans-serif;font-size:17px;font-weight:300;text-align:left;background-image:linear-gradient(90deg,#FFE6C2,#FFB45A);background-repeat:no-repeat;background-position:left bottom;background-size:0% 1px;transition:background-size .4s cubic-bezier(.2,.7,.2,1),transform .4s cubic-bezier(.2,.7,.2,1);font-variant-numeric:tabular-nums;" style-hover="background-size:100% 1px;transform:translateX(4px);">WhatsApp 341 322-6227</a><a href="https://instagram.com/" target="_blank" rel="noopener" style="display:inline-block;align-self:flex-start;min-height:32px;background:none;border:0;padding:0 0 2px;cursor:pointer;color:#FBF8F1;text-decoration:none;font-family:'Unbounded',sans-serif;font-size:17px;font-weight:300;text-align:left;background-image:linear-gradient(90deg,#FFE6C2,#FFB45A);background-repeat:no-repeat;background-position:left bottom;background-size:0% 1px;transition:background-size .4s cubic-bezier(.2,.7,.2,1),transform .4s cubic-bezier(.2,.7,.2,1);" style-hover="background-size:100% 1px;transform:translateX(4px);">Instagram [[usuario]]</a><span style="font-size:17px;font-weight:300;color:rgba(251,248,241,.7);">Rosario, Santa Fe</span></div></div>
+    </div>
+    <div style="position:relative;max-width:760px;margin:0 auto clamp(56px,7vw,100px);">
+      <div style="position:relative;z-index:1;display:flex;align-items:center;gap:6px;padding:5px;border-radius:999px;background:linear-gradient(180deg,#E4E4E7,#BDBDC2);box-shadow:inset 0 1px 0 #fff,inset 0 -2px 4px rgba(0,0,0,.12),0 30px 60px -18px rgba(0,0,0,.55);">
+        <button data-fglow="" data-magnet="" onClick="{{ encargoWA }}" style="position:relative;overflow:hidden;flex:1.3 1 0;min-width:0;height:clamp(38px,3.6vw,46px);border:0;border-radius:999px;cursor:pointer;background:linear-gradient(90deg,#FFF8EA 0%,#FFE2B0 45%,#FFC07A 100%);color:#2A1A08;font-family:inherit;font-size:clamp(10px,1vw,13px);font-weight:600;letter-spacing:.08em;text-transform:uppercase;box-shadow:0 0 22px rgba(255,190,110,.9),0 0 60px rgba(255,160,70,.55),inset 0 -2px 5px rgba(255,140,40,.35);transition:box-shadow .4s;" style-hover="box-shadow:0 0 30px rgba(255,190,110,1),0 0 90px rgba(255,160,70,.8),inset 0 -2px 5px rgba(255,140,40,.35);"><span data-fshine="" aria-hidden="true" style="position:absolute;top:0;bottom:0;left:0;width:30%;background:linear-gradient(100deg,rgba(255,255,255,0),rgba(255,255,255,.85),rgba(255,255,255,0));transform:translateX(-120%) skewX(-20deg);"></span><span style="position:relative;">Encargá tu par</span></button>
+        <button data-magnet="" onClick="{{ contact }}" style="flex:1 1 0;min-width:0;height:clamp(38px,3.6vw,46px);border:0;border-radius:999px;cursor:pointer;background:linear-gradient(180deg,#1A1A1C,#0B0B0C);color:#F4F2EE;font-family:inherit;font-size:clamp(10px,1vw,13px);font-weight:500;letter-spacing:.08em;text-transform:uppercase;box-shadow:inset 0 1px 0 rgba(255,255,255,.1);transition:background .3s,color .3s;" style-hover="background:#000;color:#FFE2B0;">Consultanos</button>
+        <button onClick="{{ go.inicio }}" aria-label="Volver arriba" style="flex:0 0 auto;width:clamp(38px,3.6vw,46px);height:clamp(38px,3.6vw,46px);border-radius:50%;border:0;cursor:pointer;background:linear-gradient(180deg,#D6D6DA,#B4B4B9);color:#3A3A3D;display:flex;align-items:center;justify-content:center;box-shadow:inset 0 2px 0 rgba(255,255,255,.7),inset 0 -2px 4px rgba(0,0,0,.15),0 4px 10px rgba(0,0,0,.25);transition:transform .3s cubic-bezier(.2,.7,.2,1);" style-hover="transform:translateY(-3px) rotate(-8deg);"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"></path></svg></button>
+      </div>
+      <span aria-hidden="true" style="position:absolute;left:6%;right:6%;top:100%;height:44px;margin-top:4px;border-radius:50%;background:radial-gradient(ellipse 45% 60% at 30% 30%,rgba(255,180,90,.45),rgba(255,180,90,0) 70%),radial-gradient(ellipse 80% 40% at 50% 0%,rgba(0,0,0,.45),rgba(0,0,0,0) 70%);filter:blur(10px);"></span>
+    </div>
+    <div style="display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;padding-top:24px;border-top:1px solid rgba(255,255,255,.18);font-size:13px;">
+      <div style="display:flex;align-items:center;gap:14px;">
+        {{ spinLogo }}
+        <span style="color:rgba(255,255,255,.75);">© 2026 {{ brand }}. Todos los derechos reservados.</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:10px;">
+        <a href="https://instagram.com/" target="_blank" rel="noopener" aria-label="Instagram [[usuario]]" style="width:48px;height:48px;border-radius:50%;border:1px solid rgba(255,255,255,.3);display:flex;align-items:center;justify-content:center;color:#fff;background:none;cursor:pointer;transition:border-color .3s,transform .3s cubic-bezier(.2,.7,.2,1);" style-hover="border-color:#FFD9A8;transform:translateY(-2px);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="4.5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.2" cy="6.8" r=".9" fill="currentColor" stroke="none"></circle></svg></a>
+        <a href="https://wa.me/5493413226227" target="_blank" rel="noopener" aria-label="WhatsApp 341 322-6227" style="width:48px;height:48px;border-radius:50%;border:1px solid rgba(255,255,255,.3);display:flex;align-items:center;justify-content:center;color:#fff;background:none;cursor:pointer;transition:border-color .3s,transform .3s cubic-bezier(.2,.7,.2,1);" style-hover="border-color:#FFD9A8;transform:translateY(-2px);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 19.1L4 20z"></path></svg></a>
+        
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+
+<!-- CARRITO -->
+<div onClick="{{ closeCart }}" aria-hidden="true" style="position:fixed;inset:0;z-index:89;background:rgba(17,17,17,.35);backdrop-filter:blur(3px);transition:opacity .35s;opacity:{{ cartUi.backOp }};pointer-events:{{ cartUi.pe }};"></div>
+<aside data-trap="{{ cartUi.trap }}" role="dialog" aria-modal="true" aria-label="Mi carrito" aria-hidden="{{ cartUi.hidden }}" onMouseEnter="{{ cartHoldOn }}" style="position:fixed;top:0;right:0;bottom:0;z-index:90;width:min(420px,100vw);background:var(--surface);box-shadow:-20px 0 60px rgba(0,0,0,.15);display:flex;flex-direction:column;transition:transform .45s var(--ease),visibility .45s;transform:{{ cartUi.tf }};visibility:{{ cartUi.vis }};">
+  <div style="display:flex;justify-content:space-between;align-items:center;padding:16px 16px 16px 24px;border-bottom:1px solid var(--line);">
+    <span style="font-size:14px;font-weight:400;letter-spacing:.16em;text-transform:uppercase;">Mi carrito <span style="color:var(--ink-soft);font-variant-numeric:tabular-nums;">({{ cartCount }})</span></span>
+    <button data-autofocus="" onClick="{{ closeCart }}" aria-label="Cerrar carrito" style="width:44px;height:44px;background:none;border:0;cursor:pointer;color:var(--ink);display:flex;align-items:center;justify-content:center;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M6 6l12 12M18 6L6 18"></path></svg></button>
+  </div>
+  <sc-if value="{{ cartEmpty }}" hint-placeholder-val="{{ true }}">
+    <div style="position:relative;flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;padding:32px;text-align:center;overflow:hidden;isolation:isolate;">
+      <img src="img/ilustraciones/ilus-05-seda-gris-clara.webp" alt="" aria-hidden="true" width="736" height="1472" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.35;mix-blend-mode:multiply;z-index:-1;">
+      <p style="margin:0;font-size:22px;letter-spacing:.04em;text-transform:uppercase;">Tu carrito está vacío</p>
+      <button onClick="{{ cartToCatalog }}" style="min-height:52px;padding:0 28px;background:var(--ink);color:#fff;border:0;border-radius:2px;font-size:14px;font-weight:400;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;">Ver catálogo</button>
+    </div>
+  </sc-if>
+  <sc-if value="{{ hasCart }}" hint-placeholder-val="{{ false }}">
+    <ul style="list-style:none;margin:0;padding:8px 0;flex:1;overflow-y:auto;">
+      <sc-for list="{{ cartItems }}" as="it" hint-placeholder-count="2">
+        <li style="display:grid;grid-template-columns:84px 1fr;gap:16px;padding:16px 24px;border-bottom:1px solid var(--line);transition:background-color .6s;background-color:{{ it.bg }};">
+          <div style="aspect-ratio:1;background:var(--bg);isolation:isolate;border-radius:2px;overflow:hidden;"><img src="{{ it.img }}" alt="{{ it.alt }}" width="168" height="168" style="width:100%;height:100%;object-fit:cover;mix-blend-mode:multiply;display:block;"></div>
+          <div style="display:flex;flex-direction:column;gap:2px;min-width:0;">
+            <span style="font-size:11px;font-weight:400;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);">{{ it.marca }}</span>
+            <span style="font-size:15px;line-height:1.3;">{{ it.nombre }}</span>
+            <span style="font-size:13px;color:var(--ink-soft);">Talle {{ it.talle }}{{ it.encargo }}</span>
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-top:8px;gap:8px;">
+              <div style="display:flex;align-items:center;border:1px solid var(--line);border-radius:2px;">
+                <button onClick="{{ it.dec }}" aria-label="Restar una unidad" style="width:40px;height:40px;background:none;border:0;cursor:pointer;color:var(--ink);font-size:18px;">−</button>
+                <span style="min-width:24px;text-align:center;font-size:14px;font-weight:400;font-variant-numeric:tabular-nums;" aria-live="polite">{{ it.qty }}</span>
+                <button onClick="{{ it.inc }}" aria-label="Sumar una unidad" style="width:40px;height:40px;background:none;border:0;cursor:pointer;color:var(--ink);font-size:18px;">+</button>
+              </div>
+              <span style="font-size:15px;font-weight:400;font-variant-numeric:tabular-nums;">{{ it.subtotal }}</span>
+            </div>
+            <button onClick="{{ it.remove }}" style="align-self:flex-start;min-height:36px;padding:0;background:none;border:0;cursor:pointer;color:var(--ink-soft);font-size:12px;letter-spacing:.06em;text-decoration:underline;text-underline-offset:3px;">Quitar</button>
+          </div>
+        </li>
+      </sc-for>
+    </ul>
+    <div style="padding:20px 24px 24px;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:14px;">
+      <div style="display:flex;justify-content:space-between;align-items:baseline;"><span style="font-size:13px;font-weight:400;letter-spacing:.16em;text-transform:uppercase;">Total</span><span style="font-size:22px;font-weight:400;font-variant-numeric:tabular-nums;">{{ cartTotal }}</span></div>
+      <button onClick="{{ stockWA }}" style="min-height:54px;background-color:var(--ink);color:#fff;border:0;border-radius:2px;font-size:14px;font-weight:400;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;background-image:linear-gradient(var(--accent),var(--accent));background-repeat:no-repeat;background-position:left bottom;background-size:0% 3px;transition:background-size .45s var(--ease);" style-hover="background-size:100% 3px;">Consultar stock por WhatsApp</button>
+      <p style="margin:0;font-size:12px;line-height:1.5;color:var(--ink-soft);">Te confirmamos stock por WhatsApp. Si algún talle no está, lo encargamos: demora de 3 a 5 semanas.</p>
+    </div>
+  </sc-if>
+</aside>
+
+<!-- FICHA -->
+<sc-if value="{{ fichaOpen }}" hint-placeholder-val="{{ false }}">
+  <div onClick="{{ fv.backdrop }}" style="position:fixed;inset:0;z-index:95;background:rgba(17,17,17,.5);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;">
+    <div data-trap="on" role="dialog" aria-modal="true" aria-label="{{ fv.marca }} {{ fv.nombre }}" style="position:relative;width:{{ fl.w }};height:{{ fl.h }};background:var(--surface);border-radius:{{ fl.r }};box-shadow:0 40px 100px rgba(0,0,0,.3);display:grid;grid-template-columns:{{ fl.cols }};grid-template-rows:{{ fl.rows }};overflow:hidden;">
+      <button data-autofocus="" onClick="{{ fv.close }}" aria-label="Cerrar ficha" style="position:absolute;top:12px;right:12px;z-index:6;width:44px;height:44px;border-radius:50%;background:rgba(247,247,247,.92);border:1px solid var(--line);cursor:pointer;color:var(--ink);display:flex;align-items:center;justify-content:center;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M6 6l12 12M18 6L6 18"></path></svg></button>
+      <div style="display:flex;flex-direction:column;min-height:0;background:var(--bg);border-right:1px solid var(--line);">
+        <div onPointerDown="{{ fv.swDown }}" onPointerUp="{{ fv.swUp }}" style="position:relative;flex:1;min-height:0;overflow:hidden;isolation:isolate;touch-action:pan-y;">
+          <sc-if value="{{ fv.okMain }}" hint-placeholder-val="{{ true }}">
+            <img data-zoom="" src="{{ fv.main }}" alt="{{ fv.mainAlt }}" width="1024" height="1024" draggable="false" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;mix-blend-mode:multiply;">
+          </sc-if>
+          <sc-if value="{{ fv.failMain }}" hint-placeholder-val="{{ false }}">
+            <div style="position:absolute;inset:0;background:#D9D9D9;display:flex;align-items:center;justify-content:center;color:var(--ink-soft);">{{ fv.nombre }}</div>
+          </sc-if>
+          <button onClick="{{ fv.prev }}" aria-label="Foto anterior" style="position:absolute;left:12px;top:50%;transform:translateY(-50%);z-index:3;width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:rgba(247,247,247,.92);cursor:pointer;color:var(--ink);display:flex;align-items:center;justify-content:center;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M15 5l-7 7 7 7"></path></svg></button>
+          <button onClick="{{ fv.next }}" aria-label="Foto siguiente" style="position:absolute;right:12px;top:50%;transform:translateY(-50%);z-index:3;width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:rgba(247,247,247,.92);cursor:pointer;color:var(--ink);display:flex;align-items:center;justify-content:center;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M9 5l7 7-7 7"></path></svg></button>
+          <span style="position:absolute;left:16px;bottom:12px;z-index:3;font-size:12px;font-weight:400;letter-spacing:.1em;color:var(--ink-soft);font-variant-numeric:tabular-nums;">{{ fv.count }}</span>
+        </div>
+        <div style="display:flex;gap:8px;padding:10px 12px;overflow-x:auto;scrollbar-width:none;border-top:1px solid var(--line);">
+          <sc-for list="{{ fv.thumbs }}" as="t" hint-placeholder-count="6">
+            <button onClick="{{ t.pick }}" aria-label="Ver foto {{ t.n }}" aria-current="{{ t.current }}" style="flex:0 0 auto;width:{{ fl.thumb }};height:{{ fl.thumb }};padding:0;border:1px solid {{ t.bd }};border-radius:2px;background:var(--bg);cursor:pointer;isolation:isolate;overflow:hidden;opacity:{{ t.op }};transition:opacity .25s,border-color .25s;"><img src="{{ t.src }}" alt="" width="128" height="128" loading="lazy" style="width:100%;height:100%;object-fit:cover;mix-blend-mode:multiply;display:block;"></button>
+          </sc-for>
+        </div>
+      </div>
+      <div style="min-height:0;overflow-y:auto;padding:{{ fl.pad }};display:flex;flex-direction:column;gap:20px;">
+        <div>
+          <span style="font-size:12px;font-weight:400;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);">{{ fv.marca }}</span>
+          <h2 style="margin:4px 0 0;font-weight:300;font-size:clamp(1.4rem,2.2vw,2rem);line-height:1.1;letter-spacing:.05em;text-transform:uppercase;padding-right:44px;">{{ fv.nombre }}</h2>
+          <div style="margin-top:12px;font-size:clamp(1.5rem,2.2vw,1.9rem);font-weight:400;font-variant-numeric:tabular-nums;">{{ fv.precioFmt }}</div>
+        </div>
+        <div>
+          <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px;">
+            <span style="font-size:12px;font-weight:400;letter-spacing:.16em;text-transform:uppercase;">Elegí tu talle</span>
+            <span style="font-size:12px;color:var(--ink-soft);">AR</span>
+          </div>
+          <div role="radiogroup" aria-label="Talle" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(48px,1fr));gap:6px;">
+            <sc-for list="{{ fv.talles }}" as="t" hint-placeholder-count="7">
+              <button role="radio" aria-checked="{{ t.checked }}" aria-label="{{ t.aria }}" onClick="{{ t.pick }}" style="height:48px;border-radius:2px;border:1px solid {{ t.bd }};background:{{ t.bg }};color:{{ t.color }};text-decoration:{{ t.td }};font-size:15px;font-weight:400;font-variant-numeric:tabular-nums;cursor:pointer;transition:background-color .2s,border-color .2s;">{{ t.label }}</button>
+            </sc-for>
+          </div>
+          <sc-if value="{{ fv.aviso }}" hint-placeholder-val="{{ false }}">
+            <p style="margin:10px 0 0;font-size:13px;color:var(--ink);display:flex;gap:8px;align-items:center;"><span style="width:6px;height:6px;border-radius:50%;background:var(--accent);flex:0 0 auto;"></span>Sin stock: lo encargamos. Demora de 3 a 5 semanas.</p>
+          </sc-if>
+          <sc-if value="{{ fv.needTalle }}" hint-placeholder-val="{{ false }}">
+            <p role="alert" style="margin:10px 0 0;font-size:13px;color:var(--ink);">Elegí un talle para continuar.</p>
+          </sc-if>
+        </div>
+        <sc-if value="{{ isDesk }}" hint-placeholder-val="{{ true }}">
+          <div style="display:flex;flex-direction:column;gap:10px;">
+            <button onClick="{{ fv.buy }}" style="min-height:54px;background-color:var(--ink);color:#fff;border:0;border-radius:2px;font-size:14px;font-weight:400;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;background-image:linear-gradient(var(--accent),var(--accent));background-repeat:no-repeat;background-position:left bottom;background-size:0% 3px;transition:background-size .45s var(--ease);" style-hover="background-size:100% 3px;">Comprar por WhatsApp</button>
+            <button onClick="{{ fv.add }}" style="min-height:54px;background:transparent;color:var(--ink);border:1px solid var(--ink);border-radius:2px;font-size:14px;font-weight:400;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;background-image:linear-gradient(var(--accent),var(--accent));background-repeat:no-repeat;background-position:left bottom;background-size:0% 3px;transition:background-size .45s var(--ease);" style-hover="background-size:100% 3px;">Agregar al carrito</button>
+          </div>
+        </sc-if>
+        <div style="border-top:1px solid var(--line);">
+          <button onClick="{{ fv.acc1 }}" aria-expanded="{{ fv.open1 }}" style="width:100%;min-height:52px;display:flex;justify-content:space-between;align-items:center;background:none;border:0;border-bottom:1px solid var(--line);padding:0;cursor:pointer;color:var(--ink);font-size:13px;font-weight:400;letter-spacing:.14em;text-transform:uppercase;">Ficha técnica<span aria-hidden="true" style="transition:transform .3s;transform:{{ fv.rot1 }};font-size:18px;font-weight:300;">+</span></button>
+          <sc-if value="{{ fv.open1 }}" hint-placeholder-val="{{ false }}">
+            <dl style="margin:0;padding:8px 0 16px;font-size:14px;border-bottom:1px solid var(--line);">
+              <div style="display:flex;justify-content:space-between;gap:16px;padding:6px 0;"><dt style="color:var(--ink-soft);">Gama</dt><dd style="margin:0;text-align:right;">{{ fv.gama }}</dd></div>
+              <div style="display:flex;justify-content:space-between;gap:16px;padding:6px 0;"><dt style="color:var(--ink-soft);">Diseño</dt><dd style="margin:0;text-align:right;">{{ fv.diseno }}</dd></div>
+              <div style="display:flex;justify-content:space-between;gap:16px;padding:6px 0;"><dt style="color:var(--ink-soft);">Composición</dt><dd style="margin:0;text-align:right;">{{ fv.composicion }}</dd></div>
+              <div style="display:flex;justify-content:space-between;gap:16px;padding:6px 0;"><dt style="color:var(--ink-soft);">Suela</dt><dd style="margin:0;text-align:right;">{{ fv.suela }}</dd></div>
+              <div style="display:flex;justify-content:space-between;gap:16px;padding:6px 0;"><dt style="color:var(--ink-soft);">Superficie</dt><dd style="margin:0;text-align:right;">{{ fv.superficie }}</dd></div>
+            </dl>
+          </sc-if>
+          <button onClick="{{ fv.acc2 }}" aria-expanded="{{ fv.open2 }}" style="width:100%;min-height:52px;display:flex;justify-content:space-between;align-items:center;background:none;border:0;border-bottom:1px solid var(--line);padding:0;cursor:pointer;color:var(--ink);font-size:13px;font-weight:400;letter-spacing:.14em;text-transform:uppercase;">Guía de talles<span aria-hidden="true" style="transition:transform .3s;transform:{{ fv.rot2 }};font-size:18px;font-weight:300;">+</span></button>
+          <sc-if value="{{ fv.open2 }}" hint-placeholder-val="{{ false }}">
+            <p style="margin:0;padding:12px 0 16px;font-size:14px;color:var(--ink-soft);border-bottom:1px solid var(--line);text-wrap:pretty;">Los talles son argentinos. Medí tu pie de talón a punta, parado, y escribinos con la medida: te decimos qué talle te conviene en este modelo.</p>
+          </sc-if>
+          <button onClick="{{ fv.acc3 }}" aria-expanded="{{ fv.open3 }}" style="width:100%;min-height:52px;display:flex;justify-content:space-between;align-items:center;background:none;border:0;border-bottom:1px solid var(--line);padding:0;cursor:pointer;color:var(--ink);font-size:13px;font-weight:400;letter-spacing:.14em;text-transform:uppercase;">Envíos y encargos<span aria-hidden="true" style="transition:transform .3s;transform:{{ fv.rot3 }};font-size:18px;font-weight:300;">+</span></button>
+          <sc-if value="{{ fv.open3 }}" hint-placeholder-val="{{ false }}">
+            <p style="margin:0;padding:12px 0 16px;font-size:14px;color:var(--ink-soft);border-bottom:1px solid var(--line);text-wrap:pretty;">Enviamos a todo el país. Si tu talle no tiene stock, lo encargamos: demora de 3 a 5 semanas. Coordinamos todo por WhatsApp.</p>
+          </sc-if>
+        </div>
+        <sc-if value="{{ isTab }}" hint-placeholder-val="{{ false }}"><div style="height:120px;flex:0 0 auto;"></div></sc-if>
+      </div>
+      <sc-if value="{{ isTab }}" hint-placeholder-val="{{ false }}">
+        <div style="position:absolute;left:0;right:0;bottom:0;z-index:5;display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:12px 16px calc(12px + env(safe-area-inset-bottom));background:var(--surface);border-top:1px solid var(--line);">
+          <button onClick="{{ fv.add }}" style="min-height:52px;background:transparent;color:var(--ink);border:1px solid var(--ink);border-radius:2px;font-size:12px;font-weight:400;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;">Agregar al carrito</button>
+          <button onClick="{{ fv.buy }}" style="min-height:52px;background:var(--ink);color:#fff;border:0;border-radius:2px;font-size:12px;font-weight:400;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;">Comprar por WhatsApp</button>
+        </div>
+      </sc-if>
+    </div>
+  </div>
+</sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;brandName&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Bio Boots&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Marca&quot;},&quot;accent&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#FF3D8B&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;options&quot;:[&quot;#FF3D8B&quot;,&quot;#3D7BFF&quot;,&quot;#C6F03D&quot;,&quot;#FF6A3D&quot;],&quot;section&quot;:&quot;Marca&quot;},&quot;catalogCols&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;3&quot;,&quot;options&quot;:[&quot;3&quot;,&quot;4&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Catálogo&quot;}}">
+// Número de WhatsApp: única fuente (341 322-6227, Rosario → 549 + área + número, sin el 15)
+const WHATSAPP = '5493413226227';
+const CART_KEY = 'botines-carrito-v1';
+const SUPERFICIES = [
+  { id: 'FG', label: 'Césped natural (FG)' }, { id: 'SG', label: 'Césped blando (SG)' },
+  { id: 'AG', label: 'Sintético (AG)' }, { id: 'IC', label: 'Futsal (IC)' }
+];
+const TALLES = [36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46];
+const MSG_CONTACTO = 'Hola! Me interesa saber más sobre cómo se consiguen los botines y cómo es la compra.';
+const fmtARS = new Intl.NumberFormat('es-AR', { style: 'currency', currency: 'ARS', maximumFractionDigits: 0 });
+const fmt = n => fmtARS.format(n);
+const MARCAS = ['nike', 'adidas', 'puma', 'mizuno'];
+const norm = s => (s || '').toString().normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+
+class Component extends DCLogic {
+  state = {
+    productos: null, loadError: false, vw: window.innerWidth, scrolled: false, active: 'inicio',
+    menuOpen: false, filtrosOpen: false, q: '', sup: [], tf: [], pmin: null, pmax: null, orden: 'rel',
+    hov: null, failed: {}, ficha: null, foto: 0, talle: null, needTalle: false, acc: 0,
+    cart: [], cartOpen: false, flash: null, hint: true, nos: 0, nosPaused: false, marca: [], hb: null
+  };
+  rootRef = React.createRef(); trackRef = React.createRef(); footRef = React.createRef(); progRef = React.createRef();
+  static SLOTS = 15; // espacios totales del catálogo: los vacíos quedan como marcador para nuevos modelos
+
+  // Única puerta de entrada a los datos. Para pasar al panel de administración, cambiá sólo esta función.
+  async cargarProductos() {
+    const r = await fetch('data/productos.json', { cache: 'no-cache' });
+    if (!r.ok) throw new Error('HTTP ' + r.status);
+    const data = await r.json();
+    return data.filter(p => p.activo !== false).sort((a, b) => (a.orden ?? 999) - (b.orden ?? 999));
+  }
+
+  // Mercado Pago (pendiente, sin activar). Hoy la compra se cierra por WhatsApp.
+  // pagarConMercadoPago(items) { /* crear preferencia en backend y redirigir a init_point */ }
+  pagarConMercadoPago() {}
+
+  componentDidMount() {
+    document.documentElement.lang = 'es-AR';
+    this.rm = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    this.onResize = () => { this.setState({ vw: window.innerWidth }); this.featAuto(); };
+    this.onScroll = () => { const pg = this.progRef.current; if (pg) { const h = document.documentElement.scrollHeight - window.innerHeight; pg.style.transform = `scaleX(${h > 0 ? Math.min(1, window.scrollY / h) : 0})`; } const s = window.scrollY > 24; if (s !== this.state.scrolled) this.setState({ scrolled: s }); };
+    this.onKey = e => this.handleKey(e);
+    this.onHash = () => this.syncHash();
+    this.onPMove = e => this.dragMove(e);
+    this.onPUp = () => { this.drag = null; };
+    window.addEventListener('resize', this.onResize);
+    window.addEventListener('scroll', this.onScroll, { passive: true });
+    window.addEventListener('hashchange', this.onHash);
+    window.addEventListener('pointermove', this.onPMove);
+    window.addEventListener('pointerup', this.onPUp);
+    document.addEventListener('keydown', this.onKey);
+    this.fine = window.matchMedia('(pointer: fine)').matches;
+    this.onFx = e => this.fx(e);
+    if (this.fine && !this.rm) window.addEventListener('pointermove', this.onFx, { passive: true });
+    if (!this.fine || this.rm) this.hsT = setInterval(() => this.hsCycle(), 2800);
+    this.onScroll();
+    this.applyAccent();
+    this.onImgErr = e => {
+      const t = e.target; if (!t || t.tagName !== 'IMG') return;
+      const src = t.getAttribute('src'); if (!src || src.includes('{{') || this.state.failed[src]) return;
+      this.setState(st => ({ failed: { ...st.failed, [src]: true } }));
+    };
+    this.rootRef.current && this.rootRef.current.addEventListener('error', this.onImgErr, true);
+    try { const c = JSON.parse(localStorage.getItem(CART_KEY) || '[]'); if (Array.isArray(c)) this.setState({ cart: c }); } catch (e) {}
+    this.cargarProductos()
+      .then(productos => this.setState({ productos }, () => this.syncHash()))
+      .catch(err => { console.warn('Catálogo:', err); this.setState({ productos: [], loadError: true }); });
+    try { const m = new URLSearchParams(location.search).get('marca'); if (m) { this.setState({ marca: m.toLowerCase().split(',').filter(x => MARCAS.includes(x)) }); if (/#catalogo/.test(location.hash)) setTimeout(() => this.scrollToId('catalogo'), 400); } } catch (e) {}
+    this.setupObservers();
+    this.heroInit();
+    this.howInit();
+    const nl = document.querySelector('[data-navlogo]'); if (nl && !this.rm) nl.animate([{ transform: 'rotate(0deg) scale(1)' }, { transform: 'rotate(180deg) scale(.86)' }, { transform: 'rotate(360deg) scale(1)' }], { duration: 9000, iterations: Infinity, easing: 'cubic-bezier(.65,0,.35,1)' });
+    this.featCar = setInterval(() => this.featAuto(), 4800);
+    this.edgeT = setInterval(() => { this.edgeInit(); if (this.edgeOn) clearInterval(this.edgeT); }, 400);
+    this.onHow = () => this.howTick(); window.addEventListener('scroll', this.onHow, { passive: true }); window.addEventListener('resize', this.onHow);
+    if (!this.rm) setTimeout(() => document.querySelectorAll('[data-halo]').forEach((el, i) => el.animate([{ opacity: .3 }, { opacity: .5 }, { opacity: .3 }], { duration: 6000, delay: i * 900, iterations: Infinity, easing: 'ease-in-out' })), 300);
+    this.onMarca = e => { e.preventDefault(); this.setState({ q: e.detail.nombre }); this.scrollToId('catalogo'); };
+    document.addEventListener('bioboots:marca', this.onMarca);
+    this.auto = setInterval(() => { if (!this.state.nosPaused && !this.rm && !document.hidden) this.nosStep(1); }, 5000);
+  }
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.onResize); window.removeEventListener('scroll', this.onScroll);
+    window.removeEventListener('hashchange', this.onHash); window.removeEventListener('pointermove', this.onPMove);
+    window.removeEventListener('pointerup', this.onPUp); document.removeEventListener('keydown', this.onKey);
+    cancelAnimationFrame(this.heroRaf); document.removeEventListener('bioboots:marca', this.onMarca); window.removeEventListener('pointermove', this.onHeroMove); window.removeEventListener('resize', this.onHeroFit); clearInterval(this.auto); clearInterval(this.footLoop); clearInterval(this.featCar); clearInterval(this.edgeT); clearTimeout(this.revealSafety); clearInterval(this.featInitT); clearInterval(this.hsT); window.removeEventListener('pointermove', this.onFx);
+    window.removeEventListener('scroll', this.onRevealScroll); window.removeEventListener('scroll', this.onHow); window.removeEventListener('resize', this.onHow); cancelAnimationFrame(this.howRaf); window.removeEventListener('resize', this.onRevealScroll);
+    document.querySelectorAll('[data-reveal]').forEach(el => { el.style.opacity = '1'; el.style.transform = 'none'; }); this.io && this.io.disconnect(); this.secIO && this.secIO.disconnect(); this.footIO && this.footIO.disconnect();
+  }
+  heroInit() {
+    const root = document.getElementById('inicio'); if (!root) return;
+    const letters = [...root.querySelectorAll('[data-ch]')];
+    if (!letters.length || (this.hx && this.hx.letters.length === letters.length && letters[0] === this.hx.letters[0])) return;
+    const fresh = !this.hx;
+    this.hx = { root, letters, t0: performance.now() };
+    if (!this.rm) letters.forEach((l, i) => l.animate([
+      { opacity: 0, transform: 'translateY(.4em)', filter: 'blur(14px)', fontVariationSettings: "'wght' 100,'wdth' 100" },
+      { opacity: 1, transform: 'none', filter: 'blur(0px)', fontVariationSettings: "'wght' 600,'wdth' 100" }
+    ], { duration: 900, delay: i * 60, easing: 'cubic-bezier(.2,.7,.2,1)', fill: 'backwards' }));
+    if (!fresh || this.rm) return;
+    const loop = t => { this.heroRaf = requestAnimationFrame(loop); if (!document.hidden) this.heroTick(t); };
+    this.heroRaf = requestAnimationFrame(loop);
+  }
+  // Franja de luz que recorre el nombre cada 6,5 s e "infla" cada letra al pasar
+  heroTick(t) {
+    const h = this.hx; if (!h || !h.root.isConnected) return;
+    if (h.root.getBoundingClientRect().bottom < 0) return;
+    const el = t - h.t0 - 1500, P = 6500, D = 1900, n = h.letters.length;
+    const ph = el < 0 ? -1 : el % P, pos = ph >= 0 && ph < D ? (ph / D) * (n + 5) - 2.5 : -99;
+    h.letters.forEach((l, i) => {
+      const d = i - pos, fz = Math.exp(-d * d / 2.4);
+      if (fz < .005 && l._fz === 0) return; const z = fz < .005 ? 0 : fz; l._fz = z;
+      l.style.fontVariationSettings = `'wght' ${Math.round(600 + 220 * z)},'wdth' ${(100 + 22 * z).toFixed(1)}`;
+      l.style.color = z ? `color-mix(in oklab, #FFD9A8 ${Math.round(z * 100)}%, #EFE6D3)` : '';
+      l.style.textShadow = z ? `0 0 ${Math.round(46 * z)}px rgba(255,217,168,${(.6 * z).toFixed(2)})` : '';
+    });
+  }
+  // Cómo comprar: línea de recorrido + números que se llenan y cuentan
+  howInit() {
+    const sec = document.getElementById('como-comprar'); if (!sec) return;
+    this.how = { sec, line: sec.querySelector('[data-howline]'), bg: sec.querySelector('[data-howbg]'), steps: [...sec.querySelectorAll('[data-step]')], fired: [] };
+    if (this.rm) return;
+    this.how.steps.forEach(li => { li.querySelector('[data-num]').style.opacity = '0'; const d = li.querySelector('[data-dot]'); d.style.opacity = '0'; d.style.transform = 'scale(0)'; });
+    this.how.line && this.how.line.setAttribute('stroke-dashoffset', '1');
+    this.howTick();
+  }
+  howTick() {
+    const H = this.how; if (!H || !H.sec.isConnected) return;
+    const r = H.sec.getBoundingClientRect(), vh = window.innerHeight;
+    if (H.bg && !this.rm) H.bg.style.transform = `translateY(${(r.top * -.12).toFixed(1)}px)`;
+    if (this.rm) return;
+    const ol = H.sec.querySelector('ol').getBoundingClientRect(), desk = this.state.vw > 1024;
+    const p = desk ? Math.max(0, Math.min(1, (vh * .8 - ol.top) / (vh * .45))) : Math.max(0, Math.min(1, (vh * .7 - ol.top) / ol.height));
+    H.line && H.line.setAttribute('stroke-dashoffset', (1 - p).toFixed(4));
+    const n = H.steps.length;
+    H.steps.forEach((li, i) => { if (!H.fired[i] && p > 0.005 && p >= i / (n - 1) - .01) { H.fired[i] = true; this.howFire(li); } });
+  }
+  howFire(li) {
+    const num = li.querySelector('[data-num]'), dot = li.querySelector('[data-dot]'), fl = li.querySelector('[data-flash]');
+    const da = dot.animate([{ opacity: 0, transform: 'scale(0)', boxShadow: '0 0 0 rgba(255,217,168,0)' }, { opacity: 1, transform: 'scale(1.9)', boxShadow: '0 0 28px rgba(255,217,168,1)' }, { opacity: 1, transform: 'scale(1)', boxShadow: '0 0 12px rgba(255,217,168,.6)' }], { duration: 650, easing: 'cubic-bezier(.2,.7,.2,1)' });
+    da.onfinish = () => { dot.style.opacity = '1'; dot.style.transform = ''; };
+    const na = num.animate([{ opacity: 0, transform: 'translateY(28%) skewY(7deg) scale(.92)', filter: 'blur(14px)', clipPath: 'inset(100% 0 0 0)' }, { opacity: 1, transform: 'none', filter: 'blur(0px)', clipPath: 'inset(-10% -10% -10% -10%)' }], { duration: 950, delay: 220, easing: 'cubic-bezier(.16,1,.3,1)', fill: 'backwards' });
+    na.onfinish = () => { num.style.opacity = '1'; fl.animate([{ backgroundPosition: '120% 0' }, { backgroundPosition: '-20% 0' }], { duration: 800, easing: 'ease-out' }); };
+    num.style.opacity = '1';
+  }
+  edgeInit() {
+    if (this.rm || this.edgeOn) return; const gs = document.querySelectorAll('[data-glint]'); if (!gs.length) return; this.edgeOn = true;
+    const ease = 'cubic-bezier(.45,0,.55,1)';
+    gs.forEach((g, i) => g.animate([{ transform: 'translateX(-100%)' }, { transform: `translateX(${i ? 1000 : 560}%)` }], { duration: i ? 2600 : 4200, delay: i * 900, iterations: Infinity, easing: i ? 'linear' : ease, direction: i ? 'reverse' : 'normal' }));
+    const gl = document.querySelector('[data-glow]'); gl && gl.animate([{ transform: 'translateX(-100%)' }, { transform: 'translateX(420%)' }], { duration: 4200, iterations: Infinity, easing: ease });
+    const eb = document.querySelector('[data-edgebase]'); eb && eb.animate([{ backgroundPosition: '0% 0', opacity: .7 }, { backgroundPosition: '100% 0', opacity: 1 }, { backgroundPosition: '200% 0', opacity: .7 }], { duration: 7000, iterations: Infinity, easing: 'linear' });
+    document.querySelectorAll('[data-vglint]').forEach((v, i) => v.animate([{ transform: 'translateY(-100%)' }, { transform: 'translateY(660%)' }], { duration: 5200, delay: 1200 + i * 1700, iterations: Infinity, easing: ease }));
+    const fg = document.querySelector('[data-fglow]'); fg && fg.animate([{ filter: 'brightness(.94)' }, { filter: 'brightness(1.12)' }, { filter: 'brightness(.94)' }], { duration: 3200, iterations: Infinity, easing: 'ease-in-out' });
+    const fs = document.querySelector('[data-fshine]'); fs && fs.animate([{ transform: 'translateX(-120%) skewX(-20deg)' }, { transform: 'translateX(420%) skewX(-20deg)' }, { transform: 'translateX(420%) skewX(-20deg)' }], { duration: 3600, iterations: Infinity, easing: 'cubic-bezier(.45,0,.55,1)' });
+    const fo = document.querySelector('[data-forb]'); fo && fo.animate([{ transform: 'translate(0,0) scale(1)' }, { transform: 'translate(45vw,-8%) scale(1.15)' }, { transform: 'translate(15vw,10%) scale(.9)' }, { transform: 'translate(0,0) scale(1)' }], { duration: 18000, iterations: Infinity, easing: 'ease-in-out' });
+    document.querySelectorAll('[data-fcard]').forEach((c, i) => c.animate([{ translate: '0 0' }, { translate: '0 -6px' }, { translate: '0 0' }], { duration: 5000, delay: i * 600, iterations: Infinity, easing: 'ease-in-out' }));
+  }
+  featAuto() {
+    const st = document.querySelector('[data-featstrip]'); if (!st) return;
+    if (this.state.vw > 768) { [...st.children].forEach(el => { if (el.tagName === 'ARTICLE') { el.style.transform = ''; el.style.opacity = ''; } }); return; }
+    if (document.hidden) return;
+    if (!st._init) { st._init = true; const upd = () => { if (this.state.vw > 768) return; const c = st.scrollLeft + st.clientWidth / 2; [...st.children].forEach(a => { if (a.tagName !== 'ARTICLE') return; const d = Math.min(1, Math.abs(a.offsetLeft + a.offsetWidth / 2 - c) / a.offsetWidth); a.style.transform = `scale(${(1 - d * .08).toFixed(3)})`; a.style.opacity = (1 - d * .45).toFixed(2); }); };
+      st.addEventListener('scroll', upd, { passive: true }); st.addEventListener('touchstart', () => { this.featHold = Date.now(); }, { passive: true }); upd(); }
+    if (this.rm || Date.now() - (this.featHold || 0) < 7000) return;
+    const r = st.getBoundingClientRect(); if (r.bottom < 0 || r.top > window.innerHeight) return;
+    const arts = [...st.children].filter(a => a.tagName === 'ARTICLE'); if (!arts.length) return;
+    const c = st.scrollLeft + st.clientWidth / 2; let cur = 0, bd = Infinity; arts.forEach((a, i) => { const d = Math.abs(a.offsetLeft + a.offsetWidth / 2 - c); if (d < bd) { bd = d; cur = i; } });
+    const nx = arts[(cur + 1) % arts.length]; st.scrollTo({ left: nx.offsetLeft - (st.clientWidth - nx.offsetWidth) / 2, behavior: 'smooth' });
+  }
+  setMarca(id) {
+    this.setState({ marca: [id], menuOpen: false });
+    try { history.replaceState(null, '', '?marca=' + id + '#catalogo'); } catch (e) {}
+    setTimeout(() => this.scrollToId('catalogo'), 30);
+  }
+  componentDidUpdate() {
+    this.applyAccent();
+    this.heroInit();
+    this.scanReveal();
+    const s = this.state;
+    const ps = this.prevS || {};
+    if (s.menuOpen && !ps.menuOpen) this.menuIn();
+    this.prevS = { ficha: s.ficha, cartOpen: s.cartOpen, menuOpen: s.menuOpen, filtrosOpen: s.filtrosOpen, vw: s.vw };
+    const modal = !!s.ficha || s.cartOpen || s.menuOpen || (s.filtrosOpen && s.vw <= 1024);
+    const was = !!ps.ficha || ps.cartOpen || ps.menuOpen || (ps.filtrosOpen && ps.vw <= 1024);
+    document.body.style.overflow = modal ? 'hidden' : '';
+    if (modal && (s.ficha !== ps.ficha || s.cartOpen !== ps.cartOpen || s.menuOpen !== ps.menuOpen || s.filtrosOpen !== ps.filtrosOpen)) {
+      if (!was) this.lastFocus = document.activeElement;
+      if (!this.silentOpen) setTimeout(() => { const el = document.querySelector('[data-trap="on"] [data-autofocus]'); el && el.focus({ preventScroll: true }); }, 60);
+    }
+    if (!modal && was && this.lastFocus && this.lastFocus.focus) { this.lastFocus.focus({ preventScroll: true }); this.lastFocus = null; }
+    this.silentOpen = false;
+  }
+  // Interacciones: tilt en tarjetas, botones magnéticos y parallax del hero
+  fx(e) {
+    const t = e.target && e.target.closest ? e.target : null;
+    const tilt = t && t.closest('[data-tilt]');
+    if (this.tiltEl && this.tiltEl !== tilt) { this.tiltEl.style.transform = ''; this.tiltEl.style.setProperty('--x', '-999px'); this.tiltEl = null; }
+    if (tilt) {
+      const r = tilt.getBoundingClientRect(), x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5;
+      tilt.style.setProperty('--x', (e.clientX - r.left) + 'px'); tilt.style.setProperty('--y', (e.clientY - r.top) + 'px');
+      tilt.style.transform = `perspective(900px) rotateX(${(-y * 5).toFixed(2)}deg) rotateY(${(x * 5).toFixed(2)}deg) translateY(-6px)`;
+      this.tiltEl = tilt;
+    }
+    const mag = t && t.closest('[data-magnet]');
+    if (this.magEl && this.magEl !== mag) { this.magEl.style.transform = ''; this.magEl = null; }
+    if (mag) {
+      const r = mag.getBoundingClientRect(), dx = e.clientX - (r.left + r.width / 2), dy = e.clientY - (r.top + r.height / 2);
+      mag.style.transition = 'transform .25s cubic-bezier(.2,.7,.2,1), background-size .45s cubic-bezier(.2,.7,.2,1)';
+      mag.style.transform = `translate(${dx * .22}px, ${dy * .32}px)`; this.magEl = mag;
+    }
+    const feat = t && t.closest('[data-feat]');
+    if (this.featEl && this.featEl !== feat) { this.featLeave(this.featEl); this.featEl = null; }
+    if (feat) {
+      if (this.featEl !== feat) { this.featEl = feat; this.featEnter(feat); }
+      const fr = feat.getBoundingClientRect(), mx = (e.clientX - fr.left) / fr.width - .5, my = (e.clientY - fr.top) / fr.height - .5;
+      const bg = feat.querySelector('[data-fbg]'); if (bg) bg.style.transform = `scale(1.07) translate(${mx * -26}px, ${my * -26}px)`;
+      const boot = feat.querySelector('[data-boot]'); if (boot) boot.style.transform = `translate(${mx * 10}px, ${-6 + my * 8}px) scale(1.03)`;
+      const halo = feat.querySelector('[data-halo]'); if (halo) halo.style.translate = `${mx * -10}px ${my * -10}px`;
+      const tex = document.querySelector('[data-dtex]'); if (tex) tex.style.transform = `translate(${mx * -6}px, ${my * -6}px)`;
+    }
+    const fc = t && t.closest('[data-fcard]');
+    if (this.fcEl && this.fcEl !== fc) { this.fcEl.style.transform = ''; this.fcEl.style.setProperty('--x', '-999px'); this.fcEl = null; }
+    if (fc) { const r = fc.getBoundingClientRect(), x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5;
+      fc.style.setProperty('--x', (e.clientX - r.left) + 'px'); fc.style.setProperty('--y', (e.clientY - r.top) + 'px');
+      fc.style.transform = `perspective(900px) rotateX(${(-y * 8).toFixed(2)}deg) rotateY(${(x * 8).toFixed(2)}deg) translateY(-8px)`; this.fcEl = fc; }
+    const num = t && t.closest('[data-num]');
+    if (this.numEl && this.numEl !== num) { this.numEl.style.transform = ''; const ec = this.numEl.querySelector('[data-echo]'); ec.style.opacity = '0'; ec.style.transform = ''; this.numEl = null; }
+    if (num) {
+      const r = num.getBoundingClientRect(), x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5;
+      num.style.transform = `perspective(700px) rotateY(${(x * 24).toFixed(1)}deg) rotateX(${(-y * 24).toFixed(1)}deg)`;
+      const ec = num.querySelector('[data-echo]'); ec.style.opacity = '1'; ec.style.transform = `translate(${(10 - x * 10).toFixed(1)}px, ${(10 - y * 10).toFixed(1)}px) translateZ(-40px)`; this.numEl = num;
+    }
+    this.hsProx(e);
+    const hero = document.getElementById('inicio');
+    if (hero) {
+      const tls = hero.querySelectorAll('[data-tilt3d]'); const tl = tls[0];
+      if (tl) { const r = tl.parentElement.getBoundingClientRect(); const x = (e.clientX - (r.left + r.width / 2)) / r.width, y = (e.clientY - (r.top + r.height / 2)) / r.height; const inside = Math.abs(x) < .9 && Math.abs(y) < .9; const tv = inside ? `perspective(1200px) rotateY(${(x * 16).toFixed(2)}deg) rotateX(${(-y * 10).toFixed(2)}deg)` : '';  tls.forEach(n => { n.style.transform = tv; }); }
+      const r = hero.getBoundingClientRect();
+      if (e.clientY < r.bottom && e.clientY > r.top) {
+        const x = (e.clientX / window.innerWidth - .5), y = ((e.clientY - r.top) / r.height - .5);
+        hero.querySelectorAll('[data-par]').forEach(el => { const d = +el.dataset.par; el.style.transform = `translate(${x * d}px, ${y * d}px)`; });
+      }
+    }
+  }
+  // Destacados: la info aparece de arriba hacia abajo al pasar el mouse (sólo desktop con mouse)
+  // Hero: puntos destacados que aparecen al acercar el cursor
+  hsShow(i, on) {
+    const el = document.querySelectorAll('#inicio [data-hs]')[i]; if (!el || el._on === on) return; el._on = on;
+    const g = el.querySelector('[data-hglow]'), d = el.querySelector('[data-hdot]'), l = el.querySelector('[data-hline]'), t = el.querySelector('[data-hlab]');
+    const ang = l.style.transform.match(/rotate\([^)]+\)/)[0];
+    d.style.opacity = on ? '1' : '.0'; d.style.transform = on ? 'scale(1)' : 'scale(.3)';
+    g.style.opacity = on ? '1' : '0'; g.style.transform = on ? 'scale(1)' : 'scale(.4)';
+    l.style.transform = ang + (on ? ' scaleX(1)' : ' scaleX(0)');
+    t.style.opacity = on ? '1' : '0'; t.style.filter = on ? 'blur(0)' : 'blur(4px)';
+    if (on && this.state.hint) this.setState({ hint: false });
+  }
+  hsProx(e) {
+    const hs = document.querySelectorAll('#inicio [data-hs]'); if (!hs.length) return;
+    const box = hs[0].offsetParent ? hs[0].offsetParent.getBoundingClientRect().width : 400;
+    let best = -1, bd = Infinity;
+    hs.forEach((el, i) => { const r = el.getBoundingClientRect(); const d = Math.hypot(e.clientX - r.left, e.clientY - r.top); const lim = box * (el._on ? 0.22 : 0.16); if (d < lim && d < bd) { bd = d; best = i; } });
+    hs.forEach((_, i) => this.hsShow(i, i === best));
+  }
+  hsCycle() {
+    const hs = document.querySelectorAll('#inicio [data-hs]'); if (!hs.length) return;
+    this.hsI = ((this.hsI ?? -1) + 1) % hs.length; hs.forEach((_, i) => this.hsShow(i, i === this.hsI));
+  }
+  featHoverable() { return this.fine && !this.rm && window.innerWidth > 1024; }
+  featInit() {
+    const on = this.featHoverable();
+    document.querySelectorAll('[data-feat]').forEach(el => {
+      if (!el.querySelector('[data-panel]')) return;
+      const mode = on ? 'hover' : 'static';
+      if (el.dataset.fxMode === mode) return; el.dataset.fxMode = mode;
+      if (on && this.featEl !== el) this.featLeave(el, true); else this.featEnter(el, true);
+    });
+  }
+  featParts(el) {
+    return [...el.querySelectorAll('[data-panel] [data-row]')].map(r => ({ r, line: r.querySelector('[data-line]'), lab: r.querySelector('[data-lab]'), val: r.querySelector('[data-val]') }));
+  }
+  featAnim(node, frames, opt) { if (!node) return; (node._fa || []).forEach(a => a.cancel()); node._fa = [node.animate(frames, { fill: 'both', ...opt })]; }
+  // Hover: cada fila "cae" en cascada — se dibuja la línea, entra la etiqueta y el valor se revela de arriba hacia abajo
+  featEnter(el, instant) {
+    const ease = 'cubic-bezier(.16,1,.3,1)';
+    this.featParts(el).forEach((p, i) => {
+      const d = instant ? 0 : 160 + i * 150, du = instant ? 0 : 1;
+      this.featAnim(p.line, [{ transform: 'scaleX(0)' }, { transform: 'scaleX(1)' }], { duration: 700 * du, delay: d, easing: ease });
+      this.featAnim(p.lab, [{ opacity: 0, transform: 'translateY(-14px)', letterSpacing: '.5em' }, { opacity: 1, transform: 'none', letterSpacing: '.18em' }], { duration: 800 * du, delay: d + 60 * du, easing: ease });
+      this.featAnim(p.val, [{ opacity: 0, clipPath: 'inset(0 0 100% 0)', transform: 'translateY(-70%) skewY(-4deg)', filter: 'blur(6px)' }, { opacity: 1, clipPath: 'inset(0 0 -20% 0)', transform: 'none', filter: 'blur(0)' }], { duration: 900 * du, delay: d + 140 * du, easing: ease });
+    });
+  }
+  featLeave(el, instant) {
+    const bg = el.querySelector('[data-fbg]'); if (bg) bg.style.transform = '';
+    const boot = el.querySelector('[data-boot]'); if (boot) boot.style.transform = '';
+    if (!this.featHoverable()) return;
+    const ease = 'cubic-bezier(.4,0,.2,1)', parts = this.featParts(el), n = parts.length;
+    parts.forEach((p, i) => {
+      const d = instant ? 0 : (n - 1 - i) * 45, du = instant ? 0 : 1;
+      this.featAnim(p.line, [{ transform: 'scaleX(1)' }, { transform: 'scaleX(0)', transformOrigin: 'right' }], { duration: 380 * du, delay: d, easing: ease });
+      this.featAnim(p.lab, [{ opacity: 1 }, { opacity: 0, transform: 'translateY(8px)' }], { duration: 300 * du, delay: d, easing: ease });
+      this.featAnim(p.val, [{ opacity: 1, clipPath: 'inset(0 0 -20% 0)' }, { opacity: 0, clipPath: 'inset(100% 0 0 0)', transform: 'translateY(30%)' }], { duration: 340 * du, delay: d, easing: ease });
+    });
+  }
+  applyAccent() { const r = this.rootRef.current; if (r) r.style.setProperty('--accent', this.props.accent ?? '#FF3D8B'); }
+
+  setupObservers() {
+    if (!this.rm) this.io = new IntersectionObserver(es => es.forEach(e => {
+      if (e.isIntersecting) this.revealEl(e.target);
+    }), { threshold: 0.12 });
+    this.seen = new WeakSet();
+    this.featInitT = setInterval(() => this.featInit(), 500);
+    requestAnimationFrame(() => this.scanReveal());
+    this.onRevealScroll = () => this.checkReveal();
+    window.addEventListener('scroll', this.onRevealScroll, { passive: true });
+    window.addEventListener('resize', this.onRevealScroll);
+    this.revealSafety = setTimeout(() => { this.scanReveal(); this.checkReveal(); }, 1200);
+    const map = { inicio: 'inicio', destacados: 'productos', catalogo: 'productos', 'como-comprar': 'comprar', nosotros: 'nosotros' };
+    this.secIO = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) this.setState({ active: map[e.target.id] }); }), { rootMargin: '-45% 0px -50% 0px' });
+    Object.keys(map).forEach(id => { const el = document.getElementById(id); el && this.secIO.observe(el); });
+    const f = this.footRef.current;
+    if (f) this.footIO = new IntersectionObserver(es => es.forEach(e => {
+      this.footVis = e.isIntersecting;
+      if (e.isIntersecting && (this.state.vw <= 1024 || !this.fine) && !this.rm && !this.footLoop) { this.sweep(); this.footLoop = setInterval(() => { if (this.footVis && !document.hidden && (this.state.vw <= 1024 || !this.fine)) this.sweep(); }, 3400); }
+    }), { threshold: 0.35 });
+    f && this.footIO.observe(f);
+  }
+  scanReveal() {
+    if (this.rm || !this.seen) return;
+    this.pending = this.pending || new Set();
+    document.querySelectorAll('[data-reveal]').forEach(el => {
+      const stale = el.style.opacity === '0' && !this.pending.has(el);
+      if (this.seen.has(el) && !stale) return; this.seen.add(el);
+      if (el.getBoundingClientRect().top < window.innerHeight * 0.92) { this.revealEl(el); return; }
+      el.style.opacity = '0'; el.style.transform = 'translateY(24px)';
+      el.style.transition = 'opacity 600ms cubic-bezier(.2,.7,.2,1), transform 600ms cubic-bezier(.2,.7,.2,1)';
+      this.pending.add(el);
+      this.io && this.io.observe(el);
+    });
+    this.checkReveal();
+    if (this.featIO) document.querySelectorAll('[data-feat]').forEach(el => { if (!this.seen.has(el)) { this.seen.add(el); this.featIO.observe(el); } });
+  }
+  revealEl(el) { el.style.opacity = '1'; el.style.transform = 'none'; this.pending && this.pending.delete(el); this.io && this.io.unobserve(el); }
+  checkReveal() {
+    if (!this.pending) return;
+    this.pending.forEach(el => {
+      if (!el.isConnected) { this.pending.delete(el); return; }
+      if (el.getBoundingClientRect().top < window.innerHeight * 0.92) this.revealEl(el);
+    });
+  }
+  sweep() {
+    const f = this.footRef.current; if (!f) return;
+    const r = f.getBoundingClientRect(); const t0 = performance.now(), dur = 2800; this.sweepDir = !this.sweepDir; const dir = this.sweepDir;
+    const step = t => { const k = Math.min(1, (t - t0) / dur), e = k < .5 ? 2 * k * k : 1 - Math.pow(-2 * k + 2, 2) / 2, x = dir ? e : 1 - e;
+      f.style.setProperty('--mx', (-0.15 + x * 1.3) * r.width + 'px'); f.style.setProperty('--my', (r.height * (.5 + Math.sin(k * Math.PI * 2) * .3)) + 'px');
+      if (k < 1) requestAnimationFrame(step); else f.style.setProperty('--mx', '-999px'); };
+    requestAnimationFrame(step);
+  }
+
+  handleKey(e) {
+    const s = this.state;
+    if (e.key === 'Escape') {
+      if (s.ficha) this.closeFicha(); else if (s.cartOpen) this.setState({ cartOpen: false });
+      else if (s.filtrosOpen) this.setState({ filtrosOpen: false }); else if (s.menuOpen) this.closeMenuAnim();
+      return;
+    }
+    if (s.ficha && !e.target.closest('input')) {
+      if (e.key === 'ArrowRight') this.fotoStep(1); if (e.key === 'ArrowLeft') this.fotoStep(-1);
+    }
+    if (e.key === 'Tab') {
+      const traps = document.querySelectorAll('[data-trap="on"]'); const c = traps[traps.length - 1]; if (!c) return;
+      const f = [...c.querySelectorAll('a[href],button:not([disabled]),input,[tabindex]:not([tabindex="-1"])')].filter(el => el.offsetParent !== null);
+      if (!f.length) return;
+      const first = f[0], last = f[f.length - 1];
+      if (!c.contains(document.activeElement)) { e.preventDefault(); first.focus(); }
+      else if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+    }
+  }
+
+  closeMenuAnim(after) {
+    const m = document.querySelector('[data-menu]');
+    if (!m || this.rm || this.menuClosing) { this.setState({ menuOpen: false }); after && after(); return; }
+    this.menuClosing = true;
+    [...m.querySelectorAll('[data-menulink]')].reverse().forEach((l, i) => l.animate([{ opacity: 1, transform: 'none' }, { opacity: 0, transform: 'translateY(-12px)' }], { duration: 220, delay: i * 35, easing: 'cubic-bezier(.4,0,.2,1)', fill: 'forwards' }));
+    const a = m.animate([{ opacity: 1, clipPath: 'inset(0 0 0 0 round 0)' }, { opacity: 0, clipPath: 'inset(0 0 100% 0 round 0 0 32px 32px)' }], { duration: 420, delay: 120, easing: 'cubic-bezier(.65,0,.35,1)', fill: 'forwards' });
+    a.onfinish = () => { this.menuClosing = false; this.setState({ menuOpen: false }); after && after(); };
+  }
+  menuIn() {
+    const m = document.querySelector('[data-menu]'); if (!m || this.rm) return;
+    m.animate([{ opacity: 0, clipPath: 'inset(0 0 100% 0 round 0 0 32px 32px)' }, { opacity: 1, clipPath: 'inset(0 0 0 0 round 0)' }], { duration: 520, easing: 'cubic-bezier(.65,0,.35,1)', fill: 'backwards' });
+    m.querySelectorAll('[data-menulink]').forEach((l, i) => l.animate([{ opacity: 0, transform: 'translateY(24px)', filter: 'blur(6px)' }, { opacity: 1, transform: 'none', filter: 'blur(0px)' }], { duration: 600, delay: 260 + i * 80, easing: 'cubic-bezier(.16,1,.3,1)', fill: 'backwards' }));
+  }
+  scrollToId(id) {
+    if (this.state.menuOpen && document.querySelector('[data-menu]') && !this.menuClosing) { this.closeMenuAnim(() => this.scrollToId(id)); return; }
+    this.setState({ menuOpen: false });
+    const el = document.getElementById(id); if (!el) return;
+    const top = id === 'inicio' ? 0 : el.getBoundingClientRect().top + window.scrollY - 64;
+    window.scrollTo({ top, behavior: this.rm ? 'auto' : 'smooth' });
+  }
+  wa(msg) { window.open('https://wa.me/' + WHATSAPP + '?text=' + encodeURIComponent(msg), '_blank', 'noopener'); }
+
+  syncHash() {
+    const m = location.hash.match(/^#producto-(.+)$/);
+    const ps = this.state.productos || [];
+    if (m && ps.find(p => p.id === m[1])) { if (this.state.ficha !== m[1]) this.setState({ ficha: m[1], foto: 0, talle: null, needTalle: false, acc: 0 }); }
+    else if (this.state.ficha) this.setState({ ficha: null });
+  }
+  openFicha(id) {
+    this.setState({ ficha: id, foto: 0, talle: null, needTalle: false, acc: 0, cartOpen: false });
+    try { history.replaceState(null, '', '#producto-' + id); } catch (e) {}
+  }
+  closeFicha() {
+    this.setState({ ficha: null });
+    try { history.replaceState(null, '', location.pathname + location.search); } catch (e) {}
+  }
+  fotoStep(d) {
+    const p = this.prod(this.state.ficha); if (!p) return;
+    const n = p.fotos.galeria.length; this.setState({ foto: (this.state.foto + d + n) % n });
+  }
+  prod(id) { return (this.state.productos || []).find(p => p.id === id); }
+
+  saveCart(cart) { try { localStorage.setItem(CART_KEY, JSON.stringify(cart)); } catch (e) {} }
+  addToCart(p, talle) {
+    const key = p.id + '-' + talle;
+    const cart = this.state.cart.slice(); const ex = cart.find(i => i.key === key);
+    if (ex) ex.qty += 1; else cart.push({ key, id: p.id, talle, qty: 1 });
+    this.saveCart(cart);
+    if (this.state.ficha) { try { history.replaceState(null, '', location.pathname + location.search); } catch (e) {} }
+    this.cartHold = false; this.silentOpen = true;
+    this.setState({ cart, cartOpen: true, flash: key, ficha: null });
+    clearTimeout(this.flashT); clearTimeout(this.autoT);
+    this.flashT = setTimeout(() => this.setState({ flash: null }), 1800);
+    this.autoT = setTimeout(() => { if (!this.cartHold) this.setState({ cartOpen: false }); }, 2800);
+  }
+  quickAdd(p) {
+    if (p.talles.length === 1) this.addToCart(p, p.talles[0].talle); else this.openFicha(p.id);
+  }
+  updQty(key, d) {
+    const cart = this.state.cart.map(i => i.key === key ? { ...i, qty: i.qty + d } : i).filter(i => i.qty > 0);
+    this.saveCart(cart); this.setState({ cart });
+  }
+  cartLines() {
+    return this.state.cart.map(i => ({ ...i, p: this.prod(i.id) })).filter(i => i.p);
+  }
+
+  filtrar() {
+    const s = this.state, ps = s.productos || [];
+    const q = norm(s.q.trim());
+    const [lo, hi] = this.priceVals();
+    let out = ps.filter(p =>
+      (!q || norm(p.marca + ' ' + p.nombre).includes(q)) &&
+      (!s.sup.length || s.sup.includes(p.superficie)) &&
+      (!s.marca.length || s.marca.includes(norm(p.marca))) &&
+      (!s.tf.length || p.talles.some(t => t.stock > 0 && s.tf.includes(t.talle))) &&
+      p.precio >= lo && p.precio <= hi);
+    if (s.orden === 'asc') out = out.slice().sort((a, b) => a.precio - b.precio);
+    if (s.orden === 'desc') out = out.slice().sort((a, b) => b.precio - a.precio);
+    return out;
+  }
+  priceBounds() {
+    const ps = this.state.productos || []; if (!ps.length) return [0, 1];
+    const v = ps.map(p => p.precio); const mn = Math.min(...v), mx = Math.max(...v);
+    return [mn, mx === mn ? mn + 1 : mx];
+  }
+  priceVals() { const [mn, mx] = this.priceBounds(); return [this.state.pmin ?? mn, this.state.pmax ?? mx]; }
+  dragMove(e) {
+    if (!this.drag || !this.trackRef.current) return;
+    const r = this.trackRef.current.getBoundingClientRect();
+    const k = Math.max(0, Math.min(1, (e.clientX - r.left) / r.width));
+    this.setPrice(this.drag, this.priceBounds()[0] + k * (this.priceBounds()[1] - this.priceBounds()[0]));
+  }
+  setPrice(which, v) {
+    const [mn, mx] = this.priceBounds(); const [lo, hi] = this.priceVals(); const step = 1000;
+    v = Math.round(v / step) * step; v = Math.max(mn, Math.min(mx, v));
+    if (which === 'lo') this.setState({ pmin: Math.min(v, hi) }); else this.setState({ pmax: Math.max(v, lo) });
+  }
+
+  nosStep(d) { this.setState(s => ({ nos: (s.nos + d + 5) % 5 })); }
+
+  view(p) {
+    const s = this.state, disp = p.talles.filter(t => t.stock > 0).map(t => t.talle), h = s.hov === p.id;
+    const sup = SUPERFICIES.find(x => x.id === p.superficie);
+    return {
+      id: p.id, marca: p.marca, nombre: p.nombre, precioFmt: fmt(p.precio),
+      tallesTxt: disp.length ? disp.join(' · ') : 'A encargar',
+      principal: p.fotos.principal, hover: p.fotos.hover || p.fotos.principal,
+      alt1: `Botín ${p.marca} ${p.nombre}, ${(p.diseno || '').toLowerCase()}, vista de frente`,
+      alt2: `Botín ${p.marca} ${p.nombre}, vista lateral`,
+      op1: h ? '0' : '1', op2: h ? '1' : '0', fail: !!s.failed[p.fotos.principal],
+      gama: p.gama, diseno: p.diseno, composicion: p.composicion, suela: p.suela,
+      suelaTxt: sup ? sup.label : p.superficie,
+      open: () => this.openFicha(p.id),
+      key: e => { if ((e.key === 'Enter' || e.key === ' ') && e.target === e.currentTarget) { e.preventDefault(); this.openFicha(p.id); } },
+      add: e => { e && e.stopPropagation(); this.quickAdd(p); },
+      enter: () => this.setState({ hov: p.id }), leave: () => this.setState({ hov: null }),
+      err1: () => this.setState(st => ({ failed: { ...st.failed, [p.fotos.principal]: true } }))
+    };
+  }
+
+  renderVals() {
+    const s = this.state, vw = s.vw, mob = vw <= 768, tab = vw <= 1024, desk = !tab;
+    const brand = this.props.brandName ?? '[[NOMBRE]]';
+    const cols = this.props.catalogCols ?? '3';
+    const ps = s.productos || [];
+    const L = {
+      heroCols: desk ? 'minmax(0,1fr) minmax(0,2fr) minmax(0,1fr)' : 'minmax(0,1fr)',
+      heroTitle: desk ? 'clamp(2.5rem,4.6vw,5.75rem)' : 'clamp(2.5rem,11vw,4.5rem)',
+      featFlex: mob ? '0 0 86vw' : '1 1 0', featOv: mob ? 'auto' : 'hidden',
+      featH: mob ? 'auto' : 'max(calc(100svh - 84px),460px)', featRowD: window.innerHeight < 720 ? 'none' : 'grid', featImgW: mob ? 'min(100%,520px)' : 'auto', featImgH: mob ? 'auto' : '100%', featBg: mob ? '#050506' : '#111', featGap: mob ? '14px' : '0', featPad: mob ? '24px 7vw 32px' : '0', featRad: mob ? '24px' : '0',
+      catCols: desk ? '292px minmax(0,1fr)' : 'minmax(0,1fr)',
+      gridCols: desk ? `repeat(${cols},minmax(0,1fr))` : 'repeat(2,minmax(0,1fr))',
+      gridGap: mob ? '12px' : '28px',
+      nosCols: tab ? 'minmax(0,1fr)' : 'minmax(0,1fr) minmax(0,2fr)',
+      heroBrands: mob ? 'repeat(2,minmax(0,1fr))' : 'repeat(4,minmax(0,1fr))',
+      footCols: mob ? 'minmax(0,1fr)' : tab ? 'repeat(2,minmax(0,1fr))' : 'repeat(4,minmax(0,1fr))',
+      howCols: desk ? 'repeat(4,minmax(0,1fr))' : 'minmax(0,1fr)', howGap: desk ? 'clamp(24px,3vw,48px)' : '56px', howPad: desk ? '28px 0 0' : '0 0 0 40px',
+      howVB: desk ? '0 0 100 1' : '0 0 1 100', howPath: desk ? 'M0 0.5 L100 0.5' : 'M0.5 0 L0.5 100',
+      howLineL: desk ? '12.5%' : '12px', howLineT: desk ? '0' : '0', howLineW: desk ? '75%' : '1px', howAlign: desk ? 'center' : 'flex-start', howTA: desk ? 'center' : 'left', howLineH: desk ? '1px' : '100%',
+      howDotL: desk ? 'calc(50% - 4.5px)' : '-32px', howDotT: desk ? '-32px' : '0.9em'
+    };
+    const nav = s.scrolled || s.menuOpen
+      ? { bg: 'rgba(226,226,226,.85)', blur: 'blur(12px)', line: 'var(--line)' }
+      : { bg: 'rgba(226,226,226,0)', blur: 'none', line: 'transparent' };
+    const go = { inicio: () => this.scrollToId('inicio'), destacados: () => this.scrollToId('destacados'), catalogo: () => this.scrollToId('catalogo'), comprar: () => this.scrollToId('como-comprar'), nosotros: () => this.scrollToId('nosotros') };
+    const navLinks = [['inicio', 'Inicio', 'inicio'], ['productos', 'Productos', 'destacados'], ['comprar', 'Cómo comprar', 'como-comprar'], ['nosotros', 'Nosotros', 'nosotros']].map(([id, label, t]) => ({
+      label, go: () => this.scrollToId(t), under: s.active === id ? 'var(--accent)' : 'rgba(255,255,255,.22)', current: s.active === id ? 'true' : 'false',
+      bg: s.active === id ? '#FBF8F1' : 'transparent', color: s.active === id ? '#111' : 'rgba(242,242,242,.68)', hov: s.active === id ? '#111' : '#FBF8F1', fw: s.active === id ? '500' : '400', sh: s.active === id ? '0 2px 10px rgba(0,0,0,.25), inset 0 -1px 0 rgba(0,0,0,.06)' : 'none'
+    }));
+
+    const views = ps.map(p => this.view(p));
+    const heroFeat = ps.filter(p => p.destacadoHero).slice(0, 2).map(p => this.view(p));
+    const feat3 = ps.filter(p => p.destacadoSeccion).slice(0, 3).map((p, i) => ({ ...this.view(p), bg: `img/destacados/bg-${i + 1}.webp`, panel: ['#F6E9E1', '#E6EDF8', '#FAE6EE'][i], ink: i === 0 ? '#FFFFFF' : '#111111', inkTitle: '#111111', line: i === 0 ? 'rgba(255,255,255,.5)' : 'rgba(17,17,17,.35)', divOp: i === 0 ? '0' : '1', recorte: p.fotos.recorte || p.fotos.principal }));
+    const always = !this.fine || mob;
+    const heroBrands = ['Nike', 'Adidas', 'Puma', 'Mizuno'].map(n => { const id = n.toLowerCase(), on = s.hb === id; return {
+      nombre: n, href: '?marca=' + id + '#catalogo', img: 'img/hero/botin-' + id + '.png',
+      label: on && !always ? 'Ver botines →' : n, sub: always, op: always ? '1' : s.hb && !on ? '.45' : '1',
+      filt: 'drop-shadow(0 0 1px rgba(0,0,0,.95)) drop-shadow(0 0 3px rgba(0,0,0,.6)) drop-shadow(0 14px 18px rgba(0,0,0,.55))',
+      tf: on ? 'translateY(-9px) scale(1.06)' : 'none', glowOp: on ? '1' : '0', shW: on ? '74%' : '58%', shB: on ? '9px' : '4px', ul: on ? '1' : '0',
+      go: e => { e.preventDefault(); this.setMarca(id); },
+      enter: () => { if (!always) this.setState({ hb: id }); }, leave: () => { if (!always) this.setState({ hb: null }); } }; });
+    const marcaChips = MARCAS.map(id => { const on = s.marca.includes(id); return {
+      label: id[0].toUpperCase() + id.slice(1), pressed: on ? 'true' : 'false', bg: on ? '#EFE6D3' : 'transparent', color: on ? '#050506' : 'var(--ink)', bd: on ? '#EFE6D3' : 'var(--line)',
+      toggle: () => { const next = on ? s.marca.filter(i => i !== id) : [...s.marca, id]; this.setState({ marca: next }); try { history.replaceState(null, '', (next.length ? '?marca=' + next.join(',') : location.pathname) + location.hash); } catch (e) {} } }; });
+    const lista = this.filtrar().map(p => this.view(p));
+
+    const [mn, mx] = this.priceBounds(), [lo, hi] = this.priceVals();
+    const pct = v => ((v - mn) / (mx - mn) * 100) + '%';
+    const pr = {
+      min: mn, max: mx, vlo: lo, vhi: hi, lo: pct(lo), hi: pct(hi), hiR: (100 - (hi - mn) / (mx - mn) * 100) + '%',
+      loTxt: fmt(lo), hiTxt: fmt(hi),
+      downLo: e => { e.stopPropagation(); this.drag = 'lo'; }, downHi: e => { e.stopPropagation(); this.drag = 'hi'; },
+      trackDown: e => {
+        const r = this.trackRef.current.getBoundingClientRect(); const v = mn + Math.max(0, Math.min(1, (e.clientX - r.left) / r.width)) * (mx - mn);
+        this.drag = Math.abs(v - lo) <= Math.abs(v - hi) ? 'lo' : 'hi'; this.setPrice(this.drag, v);
+      },
+      keyLo: e => this.priceKey(e, 'lo', lo), keyHi: e => this.priceKey(e, 'hi', hi)
+    };
+    const supChips = SUPERFICIES.map(x => { const on = s.sup.includes(x.id); return {
+      label: x.label, pressed: on ? 'true' : 'false', bg: on ? '#EFE6D3' : 'transparent', color: on ? '#050506' : 'var(--ink)', bd: on ? '#EFE6D3' : 'var(--line)',
+      toggle: () => this.setState(st => ({ sup: on ? st.sup.filter(i => i !== x.id) : [...st.sup, x.id] })) }; });
+    const talleChips = TALLES.map(t => { const on = s.tf.includes(t); return {
+      label: t, pressed: on ? 'true' : 'false', color: on ? '#050506' : 'var(--ink)', bg: on ? '#EFE6D3' : 'transparent', bd: on ? '#EFE6D3' : 'var(--line)',
+      toggle: () => this.setState(st => ({ tf: on ? st.tf.filter(i => i !== t) : [...st.tf, t] })) }; });
+    const sortOpts = [['rel', 'Relevancia'], ['asc', 'Menor precio'], ['desc', 'Mayor precio']].map(([id, label]) => ({
+      label, pressed: s.orden === id ? 'true' : 'false', under: s.orden === id ? 'var(--ink)' : 'transparent', color: s.orden === id ? 'var(--ink)' : 'var(--ink-soft)', pick: () => this.setState({ orden: id }) }));
+
+    const filterPanelStyle = desk
+      ? { position: 'sticky', top: '96px', padding: '26px 22px', background: 'rgba(255,255,255,.03)', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)', border: '1px solid rgba(239,230,211,.08)', borderRadius: '20px', overflow: 'hidden' }
+      : { position: 'fixed', left: 0, right: 0, bottom: 0, zIndex: 90, maxHeight: '86svh', overflowY: 'auto', padding: '12px 18px 24px', background: '#161618', borderRadius: '24px 24px 0 0', boxShadow: '0 -20px 60px rgba(0,0,0,.18)', transform: s.filtrosOpen ? 'none' : 'translateY(105%)', visibility: s.filtrosOpen ? 'visible' : 'hidden', transition: 'transform .45s cubic-bezier(.2,.7,.2,1), visibility .45s' };
+
+    // Carrito
+    const lines = this.cartLines();
+    const cartCount = lines.reduce((a, i) => a + i.qty, 0);
+    const cartItems = lines.map(i => {
+      const t = i.p.talles.find(x => x.talle === i.talle);
+      return {
+        key: i.key, marca: i.p.marca, nombre: i.p.nombre, talle: i.talle, qty: i.qty, img: i.p.fotos.principal,
+        alt: `Botín ${i.p.marca} ${i.p.nombre}`, encargo: t && t.stock === 0 ? ' · a encargar' : '',
+        subtotal: fmt(i.p.precio * i.qty), bg: s.flash === i.key ? 'rgba(255,61,139,.12)' : 'transparent',
+        inc: () => this.updQty(i.key, 1), dec: () => this.updQty(i.key, -1), remove: () => this.updQty(i.key, -i.qty)
+      };
+    });
+    const total = lines.reduce((a, i) => a + i.p.precio * i.qty, 0);
+    const cartUi = s.cartOpen
+      ? { tf: 'none', vis: 'visible', backOp: '1', pe: 'auto', trap: 'on', hidden: 'false' }
+      : { tf: 'translateX(100%)', vis: 'hidden', backOp: '0', pe: 'none', trap: 'off', hidden: 'true' };
+
+    // Ficha
+    const fp = s.ficha ? this.prod(s.ficha) : null;
+    let fv = {}, fl = {};
+    if (fp) {
+      const gal = fp.fotos.galeria && fp.fotos.galeria.length ? fp.fotos.galeria : [fp.fotos.principal];
+      const sel = fp.talles.find(t => t.talle === s.talle);
+      const vistas = ['vista de frente', 'vista lateral', 'vista cenital', 'vista de talón', 'vista de suela', 'detalle', 'detalle'];
+      const tog = n => () => this.setState({ acc: s.acc === n ? 0 : n });
+      const main = gal[s.foto] || gal[0];
+      fv = {
+        marca: fp.marca, nombre: fp.nombre, precioFmt: fmt(fp.precio), gama: fp.gama, diseno: fp.diseno, composicion: fp.composicion, suela: fp.suela,
+        superficie: (SUPERFICIES.find(x => x.id === fp.superficie) || {}).label || fp.superficie,
+        main, mainAlt: `Botín ${fp.marca} ${fp.nombre}, ${vistas[s.foto] || 'detalle'}`, count: `${s.foto + 1} / ${gal.length}`,
+        okMain: !s.failed[main], failMain: !!s.failed[main],
+        errMain: () => this.setState(st => ({ failed: { ...st.failed, [main]: true } })),
+        thumbs: gal.map((src, i) => ({ src, n: i + 1, current: i === s.foto ? 'true' : 'false', bd: i === s.foto ? 'var(--ink)' : 'var(--line)', op: i === s.foto ? '1' : '.65', pick: () => this.setState({ foto: i }) })),
+        talles: fp.talles.map(t => { const on = t.talle === s.talle, ok = t.stock > 0; return {
+          label: t.talle, checked: on ? 'true' : 'false', aria: `Talle ${t.talle}${ok ? '' : ', sin stock, a encargar'}`,
+          bg: on ? 'var(--accent)' : 'transparent', bd: on ? 'var(--accent)' : ok ? 'var(--ink)' : 'var(--line)',
+          color: on ? 'var(--ink)' : ok ? 'var(--ink)' : '#9A9A9A', td: ok ? 'none' : 'line-through',
+          pick: () => this.setState({ talle: t.talle, needTalle: false }) }; }),
+        aviso: !!(sel && sel.stock === 0), needTalle: s.needTalle,
+        prev: e => { e.stopPropagation(); this.fotoStep(-1); }, next: e => { e.stopPropagation(); this.fotoStep(1); },
+        close: () => this.closeFicha(), backdrop: e => { if (e.target === e.currentTarget) this.closeFicha(); },
+        buy: () => { if (!sel) return this.setState({ needTalle: true }); this.wa(`Hola! Quiero comprar los ${fp.marca} ${fp.nombre} en talle ${sel.talle}. Precio: ${fmt(fp.precio)}.`); },
+        add: () => { if (!sel) return this.setState({ needTalle: true }); this.addToCart(fp, sel.talle); },
+        acc1: tog(1), acc2: tog(2), acc3: tog(3), open1: s.acc === 1, open2: s.acc === 2, open3: s.acc === 3,
+        rot1: s.acc === 1 ? 'rotate(45deg)' : 'none', rot2: s.acc === 2 ? 'rotate(45deg)' : 'none', rot3: s.acc === 3 ? 'rotate(45deg)' : 'none',
+        zoomMove: e => { if (tab || e.pointerType === 'touch') return; const img = e.currentTarget.querySelector('[data-zoom]'); if (!img) return; const r = e.currentTarget.getBoundingClientRect(); img.style.transformOrigin = `${(e.clientX - r.left) / r.width * 100}% ${(e.clientY - r.top) / r.height * 100}%`; img.style.transform = 'scale(1.9)'; },
+        zoomOut: e => { const img = e.currentTarget.querySelector('[data-zoom]'); if (img) img.style.transform = 'scale(1)'; },
+        swDown: e => { this.swX = e.clientX; },
+        swUp: e => { if (this.swX == null) return; const d = e.clientX - this.swX; this.swX = null; if (Math.abs(d) > 40) this.fotoStep(d < 0 ? 1 : -1); }
+      };
+      fl = desk
+        ? { w: 'min(1100px, calc(100vw - 48px))', h: 'min(740px, calc(100svh - 48px))', r: '4px', cols: '60fr 40fr', rows: 'minmax(0,1fr)', pad: '40px 36px', thumb: '68px' }
+        : { w: '100vw', h: '100svh', r: '0', cols: 'minmax(0,1fr)', rows: '55svh minmax(0,1fr)', pad: '20px 16px', thumb: '52px' };
+    }
+
+    const nosSlides = [0, 1, 2, 3, 4].map(i => {
+      let off = ((i - s.nos) % 5 + 5) % 5; if (off > 2) off -= 5;
+      return {
+        n: i + 1, label: `foto nosotros 0${i + 1}`, hidden: off === 0 ? 'false' : 'true',
+        tf: `translateX(${off * 74}%) scale(${off === 0 ? 1 : 0.8})`, op: off === 0 ? '1' : Math.abs(off) === 1 ? '.6' : '0', z: off === 0 ? '3' : Math.abs(off) === 1 ? '2' : '1',
+        current: off === 0 ? 'true' : 'false', dotW: off === 0 ? '24px' : '10px', dotBg: off === 0 ? 'var(--ink)' : '#A8A8A8', go: () => this.setState({ nos: i })
+      };
+    });
+
+    const len = Math.max(4, brand.length);
+    const footSize = `min(${(84 / (len * 0.98)).toFixed(2)}vw, 13rem)`;
+    const spinLogo = React.createElement('span', { 'aria-hidden': true, style: { display: 'block', width: 22, height: 22, backgroundColor: '#fff', WebkitMaskImage: 'url(img/logo-mask.png)', maskImage: 'url(img/logo-mask.png)', WebkitMaskSize: 'contain', maskSize: 'contain', WebkitMaskRepeat: 'no-repeat', maskRepeat: 'no-repeat', animation: 'spin 14s linear infinite' } });
+    const activeF = !!(s.q || s.marca.length || s.sup.length || s.tf.length || s.pmin != null || s.pmax != null);
+
+    return {
+      rootRef: this.rootRef, trackRef: this.trackRef, footRef: this.footRef,
+      brand, brandLetters: [...String(brand)].map(ch => ({ ch: ch === ' ' ? '\u00A0' : ch })), L, nav, go, navLinks, isDesk: desk, isTab: tab, isMob: mob, notMob: !mob,
+      menuOpen: s.menuOpen, openMenu: () => this.setState({ menuOpen: true }), closeMenu: () => this.closeMenuAnim(),
+      contact: () => this.wa(MSG_CONTACTO),
+      heroReady: heroFeat.length >= 2, heroA: heroFeat[0] || {}, heroB: heroFeat[1] || {}, heroFeat,
+      hintOp: s.hint ? '1' : '0', hintTxt: this.fine ? 'Mové el cursor sobre el botín' : 'Tocá el botín',
+      hotspots: (this.hsData || (this.hsData = [
+        { x: 36, y: 43, ang: -135, title: 'Cuello Flyknit', desc: 'Abraza el tobillo: mejor agarre en cada cambio de ritmo.' },
+        { x: 84, y: 63, ang: -45, title: 'Puntera de precisión', desc: 'Superficie limpia para un toque y un remate más finos.' },
+        { x: 62, y: 76, ang: 45, title: 'Tapones FG', desc: 'Mejor adherencia al piso al picar y frenar.' },
+        { x: 26, y: 63, ang: 135, title: 'Capellada con grip', desc: 'Textura exterior que controla la pelota, seca o mojada.' }
+      ])).map((h, i) => { const len = mob ? 44 : 78, r = h.ang * Math.PI / 180, ex = Math.cos(r) * len, ey = Math.sin(r) * len, right = ex > 0;
+        return { x: h.x + '%', y: h.y + '%', ang: h.ang + 'deg', len: len + 'px', lx: (ex + (right ? 10 : -10)) + 'px', ly: ey + 'px', lw: mob ? '140px' : '210px', tx: right ? '0' : '-100%', align: right ? 'left' : 'right', title: h.title, desc: h.desc, tap: () => this.hsShow(i, true) }; }),
+      mountDown: e => { this.md = { x: e.clientX, y: e.clientY }; },
+      mountMove: e => { if (!this.md || !s.hint || !e.buttons) return; if (Math.hypot(e.clientX - this.md.x, e.clientY - this.md.y) > 8) this.setState({ hint: false }); },
+      feat3,
+      q: s.q, onSearch: e => this.setState({ q: e.target.value }),
+      supChips, talleChips, pr, sortOpts, filterPanelStyle,
+      filtrosTrap: tab && s.filtrosOpen ? 'on' : 'off', filtrosBackdrop: tab && s.filtrosOpen,
+      openFiltros: () => this.setState({ filtrosOpen: true }), closeFiltros: () => this.setState({ filtrosOpen: false }),
+      clearFilters: () => { this.setState({ q: '', marca: [], sup: [], tf: [], pmin: null, pmax: null, orden: 'rel' }); try { history.replaceState(null, '', location.pathname + location.hash); } catch (e) {} },
+      heroBrands, marcaChips, marcaQuick: [{ label: 'Todas', pressed: s.marca.length ? 'false' : 'true', on: !s.marca.length, toggle: () => { this.setState({ marca: [] }); try { history.replaceState(null, '', location.pathname + location.hash); } catch (e) {} } }, ...MARCAS.map((id, i) => ({ label: marcaChips[i].label, on: s.marca.length === 1 && s.marca[0] === id, pressed: marcaChips[i].pressed, toggle: () => { this.setState({ marca: [id] }); try { history.replaceState(null, '', '?marca=' + id + location.hash); } catch (e) {} } }))].map(c => ({ ...c, bg: c.on ? '#EFE6D3' : 'rgba(255,255,255,.04)', color: c.on ? '#050506' : 'var(--ink)', bd: c.on ? '#EFE6D3' : 'rgba(239,230,211,.18)', sh: c.on ? '0 0 22px rgba(255,217,168,.35)' : 'none' })), encargoWA: () => this.wa('Hola! Quiero encargar un par de botines. ¿Me ayudan con el modelo y el talle?'), talleWA: () => this.wa('Hola! Quiero consultar la guía de talles: ¿qué talle me conviene?'),
+      hasActiveFilters: activeF,
+      shown: lista.length, total: views.length,
+      loading: s.productos === null, skel: [1, 2, 3, 4, 5, 6],
+      lista, hasResults: lista.length > 0, noResults: s.productos !== null && !s.loadError && lista.length === 0, loadError: s.loadError,
+      searchWA: () => this.wa(s.q ? `Hola! Estoy buscando ${s.q}. ¿Lo tienen o lo pueden conseguir?` : MSG_CONTACTO),
+      nosSlides, nosPrev: () => this.nosStep(-1), nosNext: () => this.nosStep(1),
+      nosKey: e => { if (e.key === 'ArrowLeft') { e.stopPropagation(); this.nosStep(-1); } if (e.key === 'ArrowRight') { e.stopPropagation(); this.nosStep(1); } },
+      nosPause: () => this.setState({ nosPaused: true }), nosResume: () => this.setState({ nosPaused: false }),
+      nosDown: e => { this.nx = e.clientX; }, nosUp: e => { if (this.nx == null) return; const d = e.clientX - this.nx; this.nx = null; if (Math.abs(d) > 40) this.nosStep(d < 0 ? 1 : -1); },
+      footSize, spinLogo,
+      footMove: e => { const el = e.currentTarget, r = el.getBoundingClientRect(); el.style.setProperty('--mx', (e.clientX - r.left) + 'px'); el.style.setProperty('--my', (e.clientY - r.top) + 'px'); },
+      footLeave: e => { e.currentTarget.style.setProperty('--mx', '-999px'); },
+      waDisplay: s.cartOpen || s.ficha || s.menuOpen || (tab && s.filtrosOpen) ? 'none' : 'flex',
+      cartCount, hasCart: cartCount > 0, cartEmpty: cartCount === 0, cartItems, cartTotal: fmt(total), cartUi,
+      openCart: () => { this.cartHold = true; clearTimeout(this.autoT); this.setState({ cartOpen: true, menuOpen: false }); },
+      closeCart: () => { clearTimeout(this.autoT); this.setState({ cartOpen: false }); },
+      cartHoldOn: () => { this.cartHold = true; clearTimeout(this.autoT); },
+      cartToCatalog: () => { this.setState({ cartOpen: false }); setTimeout(() => this.scrollToId('catalogo'), 50); },
+      stockWA: () => {
+        const rows = lines.map(i => `- ${i.p.marca} ${i.p.nombre} · Talle ${i.talle} · Cant. ${i.qty} · ${fmt(i.p.precio * i.qty)}`);
+        this.wa(['Hola! Quisiera saber si tienen stock de estos productos:', ...rows, `Total: ${fmt(total)}`, 'Si alguno no tiene stock, me gustaría encargarlo.'].join('\n'));
+      },
+      fichaOpen: !!fp, fv, fl, progRef: this.progRef,
+      slots: activeF ? [] : Array.from({ length: Math.max(0, Component.SLOTS - views.length) }, (_, i) => i),
+      marquee: this.marquee || (this.marquee = (() => { const txt = ['Envíos a todo el país', 'Asesoramiento de talle', 'Ingresos nuevos todas las semanas', 'Encargos en 3 a 5 semanas']; const row = k => React.createElement('div', { key: k, style: { display: 'flex', gap: 48, paddingRight: 48, flex: '0 0 auto' } }, txt.concat(txt).map((s, i) => React.createElement('span', { key: i, style: { display: 'flex', alignItems: 'center', gap: 48, whiteSpace: 'nowrap' } }, s, React.createElement('span', { style: { width: 6, height: 6, borderRadius: '50%', background: 'var(--accent)' } })))); return React.createElement('div', { style: { display: 'flex', width: 'max-content', padding: '18px 0', fontSize: 13, fontWeight: 400, letterSpacing: '.18em', textTransform: 'uppercase', animation: 'marquee 40s linear infinite' } }, row(0), row(1)); })())
+    };
+  }
+  priceKey(e, which, cur) {
+    const step = 10000;
+    if (e.key === 'ArrowRight' || e.key === 'ArrowUp') { e.preventDefault(); this.setPrice(which, cur + step); }
+    if (e.key === 'ArrowLeft' || e.key === 'ArrowDown') { e.preventDefault(); this.setPrice(which, cur - step); }
+    if (e.key === 'Home') { e.preventDefault(); this.setPrice(which, this.priceBounds()[0]); }
+    if (e.key === 'End') { e.preventDefault(); this.setPrice(which, this.priceBounds()[1]); }
+  }
+}
+</script>
+</body>
+</html>

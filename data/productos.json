@@ -1,0 +1,239 @@
+[
+  {
+    "id": "tiempo-legend-10-elite-gris",
+    "nombre": "Tiempo Legend 10 Elite FG",
+    "marca": "Nike",
+    "precio": 489999,
+    "superficie": "FG",
+    "gama": "Élite",
+    "diseno": "Gris azulado con swoosh naranja",
+    "composicion": "Capellada de cuero sintético con cuello Flyknit",
+    "suela": "Placa con tapones mixtos para césped natural",
+    "talles": [
+      {
+        "talle": 38,
+        "stock": 3
+      },
+      {
+        "talle": 39,
+        "stock": 1
+      },
+      {
+        "talle": 40,
+        "stock": 2
+      },
+      {
+        "talle": 41,
+        "stock": 3
+      },
+      {
+        "talle": 42,
+        "stock": 1
+      },
+      {
+        "talle": 43,
+        "stock": 0
+      },
+      {
+        "talle": 44,
+        "stock": 0
+      }
+    ],
+    "fotos": {
+      "principal": "img/productos/tiempo-legend-10-elite-gris/1.webp",
+      "hover": "img/productos/tiempo-legend-10-elite-gris/2.webp",
+      "galeria": [
+        "img/productos/tiempo-legend-10-elite-gris/1.webp",
+        "img/productos/tiempo-legend-10-elite-gris/2.webp",
+        "img/productos/tiempo-legend-10-elite-gris/3.webp",
+        "img/productos/tiempo-legend-10-elite-gris/4.webp",
+        "img/productos/tiempo-legend-10-elite-gris/5.webp",
+        "img/productos/tiempo-legend-10-elite-gris/6.webp",
+        "img/productos/tiempo-legend-10-elite-gris/7.webp"
+      ],
+      "recorte": "img/productos/tiempo-legend-10-elite-gris/recorte.png"
+    },
+    "destacadoHero": true,
+    "destacadoSeccion": true,
+    "orden": 1,
+    "activo": true,
+    "demo": true
+  },
+  {
+    "id": "tiempo-ligera-blanco-azul",
+    "nombre": "Tiempo Ligera FG",
+    "marca": "Nike",
+    "precio": 329999,
+    "superficie": "FG",
+    "gama": "Pro",
+    "diseno": "Blanco con panel azul y detalles rosa",
+    "composicion": "Capellada de cuero sintético acolchado",
+    "suela": "Placa con tapones cónicos para césped natural",
+    "talles": [
+      {
+        "talle": 38,
+        "stock": 0
+      },
+      {
+        "talle": 39,
+        "stock": 0
+      },
+      {
+        "talle": 40,
+        "stock": 3
+      },
+      {
+        "talle": 41,
+        "stock": 1
+      },
+      {
+        "talle": 42,
+        "stock": 2
+      },
+      {
+        "talle": 43,
+        "stock": 3
+      },
+      {
+        "talle": 44,
+        "stock": 0
+      }
+    ],
+    "fotos": {
+      "principal": "img/productos/tiempo-ligera-blanco-azul/1.webp",
+      "hover": "img/productos/tiempo-ligera-blanco-azul/2.webp",
+      "galeria": [
+        "img/productos/tiempo-ligera-blanco-azul/1.webp",
+        "img/productos/tiempo-ligera-blanco-azul/2.webp",
+        "img/productos/tiempo-ligera-blanco-azul/3.webp",
+        "img/productos/tiempo-ligera-blanco-azul/4.webp",
+        "img/productos/tiempo-ligera-blanco-azul/5.webp",
+        "img/productos/tiempo-ligera-blanco-azul/6.webp",
+        "img/productos/tiempo-ligera-blanco-azul/7.webp"
+      ],
+      "recorte": "img/productos/tiempo-ligera-blanco-azul/recorte.png"
+    },
+    "destacadoHero": false,
+    "destacadoSeccion": true,
+    "orden": 2,
+    "activo": true,
+    "demo": true
+  },
+  {
+    "id": "mercurial-vapor-16-elite-rosa",
+    "nombre": "Mercurial Vapor 16 Elite FG",
+    "marca": "Nike",
+    "precio": 519999,
+    "superficie": "FG",
+    "gama": "Élite",
+    "diseno": "Rosa degradé a blanco con swoosh negro",
+    "composicion": "Capellada de tejido sintético liviano",
+    "suela": "Placa iridiscente con tapones para césped natural",
+    "talles": [
+      {
+        "talle": 38,
+        "stock": 0
+      },
+      {
+        "talle": 39,
+        "stock": 3
+      },
+      {
+        "talle": 40,
+        "stock": 1
+      },
+      {
+        "talle": 41,
+        "stock": 2
+      },
+      {
+        "talle": 42,
+        "stock": 0
+      },
+      {
+        "talle": 43,
+        "stock": 0
+      },
+      {
+        "talle": 44,
+        "stock": 0
+      }
+    ],
+    "fotos": {
+      "principal": "img/productos/mercurial-vapor-16-elite-rosa/1.webp",
+      "hover": "img/productos/mercurial-vapor-16-elite-rosa/2.webp",
+      "galeria": [
+        "img/productos/mercurial-vapor-16-elite-rosa/1.webp",
+        "img/productos/mercurial-vapor-16-elite-rosa/2.webp",
+        "img/productos/mercurial-vapor-16-elite-rosa/3.webp",
+        "img/productos/mercurial-vapor-16-elite-rosa/4.webp",
+        "img/productos/mercurial-vapor-16-elite-rosa/5.webp",
+        "img/productos/mercurial-vapor-16-elite-rosa/6.webp"
+      ],
+      "recorte": "img/productos/mercurial-vapor-16-elite-rosa/recorte.png"
+    },
+    "destacadoHero": true,
+    "destacadoSeccion": true,
+    "orden": 3,
+    "activo": true,
+    "demo": true
+  },
+  {
+    "id": "phantom-elite-volt",
+    "nombre": "Phantom Elite SG",
+    "marca": "Nike",
+    "precio": 499999,
+    "superficie": "SG",
+    "gama": "Élite",
+    "diseno": "Verde volt con detalles naranja",
+    "composicion": "Capellada de tejido con textura de agarre",
+    "suela": "Tapones mixtos de aluminio para césped blando",
+    "talles": [
+      {
+        "talle": 38,
+        "stock": 0
+      },
+      {
+        "talle": 39,
+        "stock": 0
+      },
+      {
+        "talle": 40,
+        "stock": 0
+      },
+      {
+        "talle": 41,
+        "stock": 3
+      },
+      {
+        "talle": 42,
+        "stock": 1
+      },
+      {
+        "talle": 43,
+        "stock": 2
+      },
+      {
+        "talle": 44,
+        "stock": 3
+      }
+    ],
+    "fotos": {
+      "principal": "img/productos/phantom-elite-volt/1.webp",
+      "hover": "img/productos/phantom-elite-volt/2.webp",
+      "galeria": [
+        "img/productos/phantom-elite-volt/1.webp",
+        "img/productos/phantom-elite-volt/2.webp",
+        "img/productos/phantom-elite-volt/3.webp",
+        "img/productos/phantom-elite-volt/4.webp",
+        "img/productos/phantom-elite-volt/5.webp",
+        "img/productos/phantom-elite-volt/6.webp"
+      ]
+    },
+    "destacadoHero": false,
+    "destacadoSeccion": false,
+    "orden": 4,
+    "activo": true,
+    "demo": true
+  }
+]

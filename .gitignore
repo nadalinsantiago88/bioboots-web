@@ -1,0 +1,8 @@
+.DS_Store
+Thumbs.db
+node_modules/
+.vercel/
+screenshots/
+uploads/
+Landing Botines v1.dc.html
+Landing Botines v2-previo.dc.html
